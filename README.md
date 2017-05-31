@@ -11,4 +11,12 @@ This game is similar to Risk, however on a much grander scale. Set in the future
 https://docs.google.com/spreadsheets/d/1gk6zNO_h1iC-tShlzSe2qHKPYio21EIWgf4oH3kdTKg/edit?usp=sharing
 
 # Images for Use
+Planets
 https://pixabay.com/en/cartoon-cosmic-cosmos-fix-fixed-2026994/
+
+Aliens
+https://pixabay.com/en/aliens-comic-eye-stalks-tentacles-2029750/
+https://pixabay.com/en/alien-cartoon-comic-eye-stalks-2029727/
+https://pixabay.com/en/alien-cartoon-character-comic-1295828/
+https://pixabay.com/en/alien-monster-zombie-creature-312271/
+https://pixabay.com/en/monster-alien-round-purple-legs-312272/
