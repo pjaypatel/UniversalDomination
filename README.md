@@ -1,4 +1,4 @@
 # UniversalDomination
 
 // COP 4331 
-// Uyen Nguyen
+// Uyen Nguyen, Pranay Jay Patel
