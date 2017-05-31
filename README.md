@@ -8,3 +8,4 @@
 This game is similar to Risk, however on a much grander scale. Set in the future, a number of new planets have just been discovered, and they are free-reign to whoever can establish their ownership to them. You are the commander of an alien race and you will deploy your resources, fight wars, and then re-fortify, until you dominate the universe. Battle against your friends to conquer their planet and defend your own. 
 
 # Product Backlog
+https://docs.google.com/spreadsheets/d/1gk6zNO_h1iC-tShlzSe2qHKPYio21EIWgf4oH3kdTKg/edit?usp=sharing
