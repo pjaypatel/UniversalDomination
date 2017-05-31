@@ -9,3 +9,6 @@ This game is similar to Risk, however on a much grander scale. Set in the future
 
 # Product Backlog
 https://docs.google.com/spreadsheets/d/1gk6zNO_h1iC-tShlzSe2qHKPYio21EIWgf4oH3kdTKg/edit?usp=sharing
+
+# Images for Use
+https://pixabay.com/en/cartoon-cosmic-cosmos-fix-fixed-2026994/
