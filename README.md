@@ -13,6 +13,7 @@ https://docs.google.com/spreadsheets/d/1gk6zNO_h1iC-tShlzSe2qHKPYio21EIWgf4oH3kd
 # Images for Use
 Planets
 https://pixabay.com/en/cartoon-cosmic-cosmos-fix-fixed-2026994/
+https://www.vecteezy.com/vector-art/95137-saturn-planet-vectors
 
 Aliens
 https://pixabay.com/en/aliens-comic-eye-stalks-tentacles-2029750/
@@ -20,3 +21,10 @@ https://pixabay.com/en/alien-cartoon-comic-eye-stalks-2029727/
 https://pixabay.com/en/alien-cartoon-character-comic-1295828/
 https://pixabay.com/en/alien-monster-zombie-creature-312271/
 https://pixabay.com/en/monster-alien-round-purple-legs-312272/
+
+Backdrops
+https://pixabay.com/en/constellations-galaxy-milky-way-1853915/
+https://pixabay.com/en/starry-sky-star-galaxies-andromeda-1654074/
+https://pixabay.com/en/milky-way-starry-sky-star-galaxies-1655504/
+https://pixabay.com/en/galaxy-milky-way-nature-night-sky-2178872/
+http://www.0wallpapers.com/2368-galaxy-cosmic-space.html
