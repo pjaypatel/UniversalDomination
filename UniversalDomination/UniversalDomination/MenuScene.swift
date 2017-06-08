@@ -26,7 +26,7 @@ class MenuScene: SKScene {
             let node = self.atPoint(pos)
             
             if node == playButton {
-                if let view = view {
+                if view != nil {
                     let transition:SKTransition = SKTransition.fade(withDuration: 1)
                     let scene:SKScene = GameScene(size: self.size)
                     self.view?.presentScene(scene, transition: transition)
