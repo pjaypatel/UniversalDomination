@@ -28,6 +28,24 @@
             <point key="canvasLocation" x="1129" y="124"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="pUB-Yh-KCY">
+            <objects>
+                <viewController id="PGQ-UX-wCF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bvn-WI-VoS"/>
+                        <viewControllerLayoutGuide type="bottom" id="dOs-UO-PCI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JuB-iF-BGS">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.56236232740000003" green="0.97017198579999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKC-vf-ec5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="317" y="1044"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="QgD-AS-T72">
             <objects>
                 <viewController id="EzW-jc-0QP" sceneMemberID="viewController">
@@ -46,6 +64,9 @@
                                 <state key="normal" title="Settings">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="PGQ-UX-wCF" kind="modal" id="oLl-KK-Bbu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9n-A1-nou">
                                 <rect key="frame" x="358" y="88" width="240" height="47"/>
