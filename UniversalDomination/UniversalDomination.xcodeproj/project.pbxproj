@@ -7,18 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A751F9961EE8B89200589294 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751F9951EE8B89200589294 /* Planet.swift */; };
+		A7D60F911EE8CE8900E625E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D60F901EE8CE8900E625E7 /* LaunchScreen.storyboard */; };
 		E90020B31EE076CF008A310B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020B21EE076CF008A310B /* AppDelegate.swift */; };
-		E90020B51EE076CF008A310B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E90020B41EE076CF008A310B /* GameScene.sks */; };
-		E90020B71EE076CF008A310B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E90020B61EE076CF008A310B /* Actions.sks */; };
 		E90020B91EE076CF008A310B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020B81EE076CF008A310B /* GameScene.swift */; };
 		E90020BB1EE076CF008A310B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020BA1EE076CF008A310B /* GameViewController.swift */; };
 		E90020BE1EE076CF008A310B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90020BC1EE076CF008A310B /* Main.storyboard */; };
 		E90020C01EE076CF008A310B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90020BF1EE076CF008A310B /* Assets.xcassets */; };
-		E90020C31EE076CF008A310B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90020C11EE076CF008A310B /* LaunchScreen.storyboard */; };
 		E90020CE1EE076D0008A310B /* UniversalDominationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020CD1EE076D0008A310B /* UniversalDominationTests.swift */; };
 		E90020D91EE076D0008A310B /* UniversalDominationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020D81EE076D0008A310B /* UniversalDominationUITests.swift */; };
-		E90020E71EE07850008A310B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020E61EE07850008A310B /* MenuScene.swift */; };
-		E90020E91EE078EB008A310B /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E90020E81EE078EB008A310B /* MenuScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,15 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A751F9951EE8B89200589294 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		A7D60F901EE8CE8900E625E7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90020AF1EE076CF008A310B /* UniversalDomination.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalDomination.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90020B21EE076CF008A310B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E90020B41EE076CF008A310B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		E90020B61EE076CF008A310B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		E90020B81EE076CF008A310B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		E90020BA1EE076CF008A310B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E90020BA1EE076CF008A310B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		E90020BD1EE076CF008A310B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E90020BF1EE076CF008A310B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E90020C21EE076CF008A310B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90020C41EE076CF008A310B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E90020C91EE076D0008A310B /* UniversalDominationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalDominationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90020CD1EE076D0008A310B /* UniversalDominationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalDominationTests.swift; sourceTree = "<group>"; };
@@ -55,8 +51,6 @@
 		E90020D41EE076D0008A310B /* UniversalDominationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalDominationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90020D81EE076D0008A310B /* UniversalDominationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalDominationUITests.swift; sourceTree = "<group>"; };
 		E90020DA1EE076D0008A310B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E90020E61EE07850008A310B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
-		E90020E81EE078EB008A310B /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,16 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				E90020B21EE076CF008A310B /* AppDelegate.swift */,
-				E90020B41EE076CF008A310B /* GameScene.sks */,
-				E90020B61EE076CF008A310B /* Actions.sks */,
+				A751F9951EE8B89200589294 /* Planet.swift */,
 				E90020B81EE076CF008A310B /* GameScene.swift */,
-				E90020E61EE07850008A310B /* MenuScene.swift */,
-				E90020E81EE078EB008A310B /* MenuScene.sks */,
 				E90020BA1EE076CF008A310B /* GameViewController.swift */,
 				E90020BC1EE076CF008A310B /* Main.storyboard */,
 				E90020BF1EE076CF008A310B /* Assets.xcassets */,
-				E90020C11EE076CF008A310B /* LaunchScreen.storyboard */,
 				E90020C41EE076CF008A310B /* Info.plist */,
+				A7D60F901EE8CE8900E625E7 /* LaunchScreen.storyboard */,
 			);
 			path = UniversalDomination;
 			sourceTree = "<group>";
@@ -208,7 +199,6 @@
 				TargetAttributes = {
 					E90020AE1EE076CF008A310B = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = B2V62GXEXJ;
 						ProvisioningStyle = Automatic;
 					};
 					E90020C81EE076D0008A310B = {
@@ -249,11 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90020BE1EE076CF008A310B /* Main.storyboard in Resources */,
-				E90020E91EE078EB008A310B /* MenuScene.sks in Resources */,
-				E90020B51EE076CF008A310B /* GameScene.sks in Resources */,
+				A7D60F911EE8CE8900E625E7 /* LaunchScreen.storyboard in Resources */,
 				E90020C01EE076CF008A310B /* Assets.xcassets in Resources */,
-				E90020C31EE076CF008A310B /* LaunchScreen.storyboard in Resources */,
-				E90020B71EE076CF008A310B /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,9 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90020B91EE076CF008A310B /* GameScene.swift in Sources */,
-				E90020E71EE07850008A310B /* MenuScene.swift in Sources */,
 				E90020BB1EE076CF008A310B /* GameViewController.swift in Sources */,
 				E90020B31EE076CF008A310B /* AppDelegate.swift in Sources */,
+				A751F9961EE8B89200589294 /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,14 +310,6 @@
 				E90020BD1EE076CF008A310B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E90020C11EE076CF008A310B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E90020C21EE076CF008A310B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -435,13 +414,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B2V62GXEXJ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UniversalDomination/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Group1.UniversalDomination;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,13 +429,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B2V62GXEXJ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UniversalDomination/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Group1.UniversalDomination;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
