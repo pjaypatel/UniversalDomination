@@ -26,7 +26,7 @@ class GameScene: SKScene
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         addChild(background)
         
-        // try creating a planet
+        // adding plannets
         planets.append(Planet(im: "P1", xy: CGPoint.init(x: 200, y: 200), s: CGSize.init(width: 80, height: 80)))
         planets.append(Planet(im: "P2", xy: CGPoint.init(x: 200, y: 250), s: CGSize.init(width: 70, height: 70)))
         
