@@ -11,13 +11,13 @@ This game is similar to Risk, however on a much grander scale. Set in the future
 https://docs.google.com/spreadsheets/d/1R4cjnwTNLBMf2GdGuDK3-PWe63MBX3OPGu8qR6pyi38/edit?usp=sharing
 
 # Product Backlog
-https://docs.google.com/spreadsheets/d/1gk6zNO_h1iC-tShlzSe2qHKPYio21EIWgf4oH3kdTKg
+https://docs.google.com/spreadsheets/d/1gk6zNO_h1iC-tShlzSe2qHKPYio21EIWgf4oH3kdTKg/edit?usp=sharing
 
 # Burndown Chart
-https://docs.google.com/document/d/1xuppG0h7LJMuw8D-Lx1fngRJsiTTAEAgGMNNMG1hDpg
+https://docs.google.com/document/d/1xuppG0h7LJMuw8D-Lx1fngRJsiTTAEAgGMNNMG1hDpg/edit?usp=sharing
 
 # Design Documents 
-https://drive.google.com/open?id=0B9jST3m3ebRxc1BFNFR4bW8tYUk
+https://drive.google.com/open?id=0B9jST3m3ebRxc1BFNFR4bW8tYUk/edit?usp=sharing
 
 # Images for Use
 Planets
