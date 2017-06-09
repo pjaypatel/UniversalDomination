@@ -28,9 +28,11 @@ class GameScene: SKScene
         
         // try creating a planet
         planets.append(Planet(im: "P1", xy: CGPoint.init(x: 200, y: 200), s: CGSize.init(width: 80, height: 80)))
-        planets.append(Planet(im: "P2", xy: CGPoint.init(x: 200, y: 250), s: CGSize.init(width: 70, height: 70)))
+        planets.append(Planet(im: "P2", xy: CGPoint.init(x: 170, y: 280), s: CGSize.init(width: 70, height: 70)))
+        planets.append(Planet(im: "P3", xy: CGPoint.init(x: 300, y: 250), s: CGSize.init(width: 70, height: 70)))
         
 
+        // add the planets to the scene
         for i in planets {
             addChild(i)
         }
