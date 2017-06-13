@@ -32,6 +32,7 @@ class GameScene: SKScene
         planets.append(Planet(im:"P3", xy: CGPoint.init(x: 200, y: 250), s: CGSize.init(width:70, height:70)))
         
 
+        // add the planets to the scene
         for i in planets {
             addChild(i)
         }
