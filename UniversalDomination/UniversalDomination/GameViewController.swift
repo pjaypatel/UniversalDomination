@@ -59,4 +59,10 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    @IBAction func DiceRoll(_ sender: UIButton) {
+        
+        
+    }
+    
 }
