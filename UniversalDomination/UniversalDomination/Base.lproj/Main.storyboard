@@ -101,6 +101,9 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="Dice" destination="Npp-XL-HTM" id="gbs-ef-5CE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <barButtonItem enabled="NO" title="Item" id="Agh-ea-hHu"/>
@@ -157,8 +160,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="space-681639_1920-1" translatesAutoresizingMaskIntoConstraints="NO" id="dMc-m7-JGZ">
+                                <rect key="frame" x="-35" y="77" width="737" height="234"/>
+                            </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9n-A1-nou">
-                                <rect key="frame" x="395" y="121" width="240" height="47"/>
+                                <rect key="frame" x="352" y="100" width="240" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.65275711274088" green="0.67526369217942417" blue="0.69557561528497414" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -167,18 +173,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="presentation" id="kUn-z9-fXT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlZ-Eu-m1j">
-                                <rect key="frame" x="395" y="176" width="240" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.65275711270000003" green="0.67526369220000004" blue="0.69557561530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Settings" backgroundImage="ufo">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="PGQ-UX-wCF" kind="presentation" id="oLl-KK-Bbu"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alien1" translatesAutoresizingMaskIntoConstraints="NO" id="cI7-vp-JwD">
@@ -190,12 +184,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alien2" translatesAutoresizingMaskIntoConstraints="NO" id="aAS-J5-aQY">
-                                <rect key="frame" x="148" y="176" width="176" height="128"/>
+                                <rect key="frame" x="178" y="155" width="176" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="space-681639_1920-1" translatesAutoresizingMaskIntoConstraints="NO" id="dMc-m7-JGZ">
-                                <rect key="frame" x="-70" y="121" width="737" height="234"/>
-                            </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlZ-Eu-m1j">
+                                <rect key="frame" x="352" y="196" width="240" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.65275711270000003" green="0.67526369220000004" blue="0.69557561530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Settings" backgroundImage="ufo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PGQ-UX-wCF" kind="presentation" id="oLl-KK-Bbu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9994240403175354" green="0.91750336451138126" blue="0.057594863939897538" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

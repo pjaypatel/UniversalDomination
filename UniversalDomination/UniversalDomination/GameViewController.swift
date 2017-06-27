@@ -13,6 +13,7 @@ import GameplayKit
 class GameViewController: UIViewController {
     
     
+    @IBOutlet weak var Dice: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,9 @@ class GameViewController: UIViewController {
     
     @IBAction func DiceRoll(_ sender: UIButton) {
         
+        let Number = arc4random_uniform(5) + 1
+        
+        Dice.image = UIImage(named: "Dice\(Number)")
         
     }
     
