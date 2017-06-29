@@ -10,9 +10,7 @@
 		A751F9961EE8B89200589294 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751F9951EE8B89200589294 /* Planet.swift */; };
 		A7D60F911EE8CE8900E625E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D60F901EE8CE8900E625E7 /* LaunchScreen.storyboard */; };
 		E90020B31EE076CF008A310B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020B21EE076CF008A310B /* AppDelegate.swift */; };
-		E90020B91EE076CF008A310B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020B81EE076CF008A310B /* GameScene.swift */; };
-		E90020BB1EE076CF008A310B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020BA1EE076CF008A310B /* GameViewController.swift */; };
-		E90020BE1EE076CF008A310B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90020BC1EE076CF008A310B /* Main.storyboard */; };
+		E90020BE1EE076CF008A310B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90020BC1EE076CF008A310B /* Main.storyboard */; settings = {ASSET_TAGS = (buttons, ); }; };
 		E90020C01EE076CF008A310B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90020BF1EE076CF008A310B /* Assets.xcassets */; };
 		E90020CE1EE076D0008A310B /* UniversalDominationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020CD1EE076D0008A310B /* UniversalDominationTests.swift */; };
 		E90020D91EE076D0008A310B /* UniversalDominationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020D81EE076D0008A310B /* UniversalDominationUITests.swift */; };
@@ -193,6 +191,9 @@
 		E90020A71EE076CF008A310B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					buttons,
+				);
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Group1;
@@ -265,8 +266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E90020B91EE076CF008A310B /* GameScene.swift in Sources */,
-				E90020BB1EE076CF008A310B /* GameViewController.swift in Sources */,
 				E90020B31EE076CF008A310B /* AppDelegate.swift in Sources */,
 				A751F9961EE8B89200589294 /* Planet.swift in Sources */,
 			);
