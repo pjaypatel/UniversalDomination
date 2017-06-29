@@ -88,6 +88,7 @@ import GameplayKit
     
     @IBAction func startButton(_ sender: Any) {
         if timerIsOn == false {
+            seconds = 60
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
             timerIsOn = true
         }
@@ -105,14 +106,14 @@ import GameplayKit
         countDownTimer.text = "\(seconds)"
     }
 
-
     @IBAction func DiceRoll(_ sender: UIButton) {
         
         let Number = arc4random_uniform(5) + 1
         
         Dice.image = UIImage(named: "Dice\(Number)")
-        
     }
+
+    
 
     
 }
