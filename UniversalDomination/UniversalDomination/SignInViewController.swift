@@ -25,20 +25,14 @@ class SignInViewController: UIViewController {
     var counter4 = 3;
     
     
-    var image1 : UIImage = UIImage(named: "alien1")!
-    var image2 : UIImage = UIImage(named: "alien2")!
-    var image3 : UIImage = UIImage(named: "alien3")!
-    var image4 : UIImage = UIImage(named: "alien4")!
+    let image1 : UIImage = UIImage(named: "alien1")!
+    let image2 : UIImage = UIImage(named: "alien2")!
+    let image3 : UIImage = UIImage(named: "alien3")!
+    let image4 : UIImage = UIImage(named: "alien4")!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        var images = [UIImage]()
-//        images.append(image1)
-//        images.append(image2)
-//        images.append(image3)
-//        images.append(image4)
         
         // Do any additional setup after loading the view.
         
