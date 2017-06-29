@@ -26,7 +26,7 @@ class GameScene: SKScene
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         addChild(background)
         
-        
+//        jays comment
         
     }
 
