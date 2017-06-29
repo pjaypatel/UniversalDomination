@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EzW-jc-0QP">
+
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -195,55 +197,105 @@
                                     <segue destination="EzW-jc-0QP" kind="presentation" id="xj0-Sq-Of3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="set-JW-qGN">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="set-JW-qGN">
                                 <rect key="frame" x="385" y="218" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="P2" backgroundImage="P2"/>
+                                <state key="normal" title="P2" backgroundImage="P2">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="planetClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="hNo-r5-hI6"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvX-Sm-ccI">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvX-Sm-ccI">
                                 <rect key="frame" x="525" y="183" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="P3" backgroundImage="P3"/>
+                                <state key="normal" title="P3" backgroundImage="P3">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="planetClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="F3s-EV-djr"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8C-gT-mLq">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8C-gT-mLq">
                                 <rect key="frame" x="433" y="150" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="P4" backgroundImage="P4"/>
+                                <state key="normal" title="P4" backgroundImage="P4">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="planetClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="5Qf-V9-gNd"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swf-WJ-swq">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swf-WJ-swq">
                                 <rect key="frame" x="416" y="83" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="P5" backgroundImage="P5"/>
+                                <state key="normal" title="P5" backgroundImage="P5">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="planetClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Kjl-21-QIj"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2H-Dr-4DK">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2H-Dr-4DK">
                                 <rect key="frame" x="294" y="201" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="P6" backgroundImage="P6"/>
+                                <state key="normal" title="P6" backgroundImage="P6">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="planetClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="xgf-JP-Nju"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeJ-sx-zoF">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeJ-sx-zoF">
                                 <rect key="frame" x="164" y="172" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="P7" backgroundImage="P7"/>
+                                <state key="normal" title="P7" backgroundImage="P7">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="planetClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="c4X-JN-P0e"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFp-EL-bHv">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFp-EL-bHv">
                                 <rect key="frame" x="310" y="108" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="P8" backgroundImage="P8"/>
+                                <state key="normal" title="P8" backgroundImage="P8">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="planetClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Pt9-xD-cH8"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKC-1u-p9j">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKC-1u-p9j">
                                 <rect key="frame" x="209" y="63" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="P9" backgroundImage="P9"/>
+                                <state key="normal" title="P9" backgroundImage="P9">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="planetClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="9Kd-Sy-JcZ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnJ-c3-vC8">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnJ-c3-vC8">
                                 <rect key="frame" x="516" y="74" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="P10" backgroundImage="P10"/>
+                                <state key="normal" title="P10" backgroundImage="P10">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="planetClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="kQf-6e-5yj"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGk-rs-H7U" userLabel="P1">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGk-rs-H7U" userLabel="P1">
                                 <rect key="frame" x="76" y="123" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="P1" backgroundImage="P1"/>
+                                <state key="normal" title="P1" backgroundImage="P1">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="planetClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fpP-ex-Wbh"/>
+                                </connections>
                             </button>
 
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn8-mh-cph">
@@ -277,14 +329,28 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                      
+                        <outletCollection property="PlanetsButtons" destination="uGk-rs-H7U" collectionClass="NSMutableArray" id="Pc6-xA-VHD"/>
+                        <outletCollection property="PlanetsButtons" destination="set-JW-qGN" collectionClass="NSMutableArray" id="eda-an-6Q5"/>
+                        <outletCollection property="PlanetsButtons" destination="VvX-Sm-ccI" collectionClass="NSMutableArray" id="vaa-VV-s7p"/>
+                        <outletCollection property="PlanetsButtons" destination="P8C-gT-mLq" collectionClass="NSMutableArray" id="xwQ-BQ-xBW"/>
+                        <outletCollection property="PlanetsButtons" destination="swf-WJ-swq" collectionClass="NSMutableArray" id="5GG-Zg-3K1"/>
+                        <outletCollection property="PlanetsButtons" destination="l2H-Dr-4DK" collectionClass="NSMutableArray" id="Jbc-Sw-D6c"/>
+                        <outletCollection property="PlanetsButtons" destination="KeJ-sx-zoF" collectionClass="NSMutableArray" id="o6Q-gc-ypx"/>
+                        <outletCollection property="PlanetsButtons" destination="DFp-EL-bHv" collectionClass="NSMutableArray" id="fes-zJ-Vzp"/>
+                        <outletCollection property="PlanetsButtons" destination="oKC-1u-p9j" collectionClass="NSMutableArray" id="j82-oS-K3m"/>
+                        <outletCollection property="PlanetsButtons" destination="MnJ-c3-vC8" collectionClass="NSMutableArray" id="qmm-a4-vOQ"/>
                         <outlet property="countDownTimer" destination="KgG-By-iYp" id="mXj-tb-Pnc"/>
+
 
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <barButtonItem enabled="NO" title="Item" id="Agh-ea-hHu"/>
             </objects>
-            <point key="canvasLocation" x="1413" y="121"/>
+
+            <point key="canvasLocation" x="1048" y="-82"/>
+
         </scene>
         <!--View Controller-->
         <scene sceneID="pUB-Yh-KCY">
@@ -336,10 +402,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fe4-m2-cHM">
+                                <rect key="frame" x="340" y="40" width="287" height="315"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9n-A1-nou">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="99.5"/>
+                                        <color key="backgroundColor" red="0.65275711274088" green="0.67526369217942417" blue="0.69557561528497414" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        <state key="normal" title="Play" backgroundImage="ufo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BV1-FR-VrT" kind="presentation" id="kUn-z9-fXT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlZ-Eu-m1j">
+                                        <rect key="frame" x="0.0" y="107.5" width="287" height="100"/>
+                                        <color key="backgroundColor" red="0.65275711270000003" green="0.67526369220000004" blue="0.69557561530000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        <state key="normal" title="Settings" backgroundImage="ufo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="PGQ-UX-wCF" kind="presentation" id="oLl-KK-Bbu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcf-5q-LNL">
+                                        <rect key="frame" x="0.0" y="215.5" width="287" height="99.5"/>
+                                        <color key="backgroundColor" red="0.65275711270000003" green="0.67526369220000004" blue="0.69557561530000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        <state key="normal" title="Help" backgroundImage="ufo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alien1" translatesAutoresizingMaskIntoConstraints="NO" id="cI7-vp-JwD">
+
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="space-681639_1920-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ru0-X7-NPy">
                                 <rect key="frame" x="2" y="0.0" width="665" height="375"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alien1" translatesAutoresizingMaskIntoConstraints="NO" id="cI7-vp-JwD">
+
                                 <rect key="frame" x="122" y="88" width="120" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
