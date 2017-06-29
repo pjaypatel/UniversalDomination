@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A714680F1F00A5C400131E9A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A714680E1F00A5C400131E9A /* Player.swift */; };
 		A751F9961EE8B89200589294 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751F9951EE8B89200589294 /* Planet.swift */; };
 		A7D60F911EE8CE8900E625E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D60F901EE8CE8900E625E7 /* LaunchScreen.storyboard */; };
 		E90020B31EE076CF008A310B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020B21EE076CF008A310B /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A714680E1F00A5C400131E9A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A751F9951EE8B89200589294 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		A7D60F901EE8CE8900E625E7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90020AF1EE076CF008A310B /* UniversalDomination.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalDomination.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 			children = (
 				E90020B21EE076CF008A310B /* AppDelegate.swift */,
 				A751F9951EE8B89200589294 /* Planet.swift */,
+				A714680E1F00A5C400131E9A /* Player.swift */,
 				E90020B81EE076CF008A310B /* GameScene.swift */,
 				E90020BA1EE076CF008A310B /* GameViewController.swift */,
 				E91F5B071F0430030041D887 /* SignInViewController.swift */,
@@ -278,6 +281,7 @@
 				E90020B91EE076CF008A310B /* GameScene.swift in Sources */,
 				E90020BB1EE076CF008A310B /* GameViewController.swift in Sources */,
 				E90020B31EE076CF008A310B /* AppDelegate.swift in Sources */,
+				A714680F1F00A5C400131E9A /* Player.swift in Sources */,
 				E91F5B081F0430030041D887 /* SignInViewController.swift in Sources */,
 				E91F5B0D1F05422F0041D887 /* TestViewController.swift in Sources */,
 				A751F9961EE8B89200589294 /* Planet.swift in Sources */,
