@@ -5,7 +5,7 @@
 
 
 # Vision Statement
-This game is similar to Risk, however on a much grander scale. Set in the future, a number of new planets have just been discovered, and they are free-reign to whoever can establish their ownership to them. You are the commander of an alien race and you will deploy your resources, fight wars, and then re-fortify, until you dominate the universe. Battle against your friends to conquer their planet and defend your own. 
+This game is similar to Risk, however on a much grander scale. Set in the future, a number of new planets have just been discovered, and they are free-reign to whoever can establish their ownership to them. You are the commander of an alien race and you will deploy your resources, fight wars, and then re-fortify, until you dominate the universe. Battle against your friends to conquer their planet and defend your own. As of now, you will only need one phone in order to play this game. There will be 4 players, taking turns by passing the phone around.
 
 # User Stories / Sprint Backlog
 https://docs.google.com/spreadsheets/d/1R4cjnwTNLBMf2GdGuDK3-PWe63MBX3OPGu8qR6pyi38/edit?usp=sharing
