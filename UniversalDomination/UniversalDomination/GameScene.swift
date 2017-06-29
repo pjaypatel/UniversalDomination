@@ -27,7 +27,6 @@ class GameScene: SKScene
         addChild(background)
         
         
-        
     }
 
     
