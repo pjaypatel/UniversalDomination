@@ -240,10 +240,10 @@
             </objects>
             <point key="canvasLocation" x="1413" y="121"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="pUB-Yh-KCY">
             <objects>
-                <viewController id="PGQ-UX-wCF" sceneMemberID="viewController">
+                <viewController id="PGQ-UX-wCF" userLabel="Settings View Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bvn-WI-VoS"/>
                         <viewControllerLayoutGuide type="bottom" id="dOs-UO-PCI"/>
@@ -278,10 +278,10 @@
             </objects>
             <point key="canvasLocation" x="934" y="1188"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="QgD-AS-T72">
             <objects>
-                <viewController id="EzW-jc-0QP" sceneMemberID="viewController">
+                <viewController id="EzW-jc-0QP" userLabel="Menu View Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="75C-YL-Ghp"/>
                         <viewControllerLayoutGuide type="bottom" id="aXC-YN-0rJ"/>
@@ -381,6 +381,6 @@
         <image name="ufo" width="1920" height="999"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xj0-Sq-Of3"/>
+        <segue reference="F2t-2l-Uk2"/>
     </inferredMetricsTieBreakers>
 </document>
