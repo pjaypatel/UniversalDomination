@@ -16,6 +16,9 @@
 		E90020C01EE076CF008A310B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90020BF1EE076CF008A310B /* Assets.xcassets */; };
 		E90020CE1EE076D0008A310B /* UniversalDominationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020CD1EE076D0008A310B /* UniversalDominationTests.swift */; };
 		E90020D91EE076D0008A310B /* UniversalDominationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020D81EE076D0008A310B /* UniversalDominationUITests.swift */; };
+		E91F5B081F0430030041D887 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91F5B071F0430030041D887 /* SignInViewController.swift */; };
+		E91F5B0D1F05422F0041D887 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91F5B0B1F05422F0041D887 /* TestViewController.swift */; };
+		E91F5B0E1F05422F0041D887 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91F5B0C1F05422F0041D887 /* TestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		E90020D41EE076D0008A310B /* UniversalDominationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalDominationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90020D81EE076D0008A310B /* UniversalDominationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalDominationUITests.swift; sourceTree = "<group>"; };
 		E90020DA1EE076D0008A310B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E91F5B071F0430030041D887 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E91F5B0B1F05422F0041D887 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		E91F5B0C1F05422F0041D887 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +111,10 @@
 				A751F9951EE8B89200589294 /* Planet.swift */,
 				E90020B81EE076CF008A310B /* GameScene.swift */,
 				E90020BA1EE076CF008A310B /* GameViewController.swift */,
+				E91F5B071F0430030041D887 /* SignInViewController.swift */,
 				E90020BC1EE076CF008A310B /* Main.storyboard */,
+				E91F5B0B1F05422F0041D887 /* TestViewController.swift */,
+				E91F5B0C1F05422F0041D887 /* TestViewController.xib */,
 				E90020BF1EE076CF008A310B /* Assets.xcassets */,
 				E90020C41EE076CF008A310B /* Info.plist */,
 				A7D60F901EE8CE8900E625E7 /* LaunchScreen.storyboard */,
@@ -240,6 +249,7 @@
 			files = (
 				E90020BE1EE076CF008A310B /* Main.storyboard in Resources */,
 				A7D60F911EE8CE8900E625E7 /* LaunchScreen.storyboard in Resources */,
+				E91F5B0E1F05422F0041D887 /* TestViewController.xib in Resources */,
 				E90020C01EE076CF008A310B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +278,8 @@
 				E90020B91EE076CF008A310B /* GameScene.swift in Sources */,
 				E90020BB1EE076CF008A310B /* GameViewController.swift in Sources */,
 				E90020B31EE076CF008A310B /* AppDelegate.swift in Sources */,
+				E91F5B081F0430030041D887 /* SignInViewController.swift in Sources */,
+				E91F5B0D1F05422F0041D887 /* TestViewController.swift in Sources */,
 				A751F9961EE8B89200589294 /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
