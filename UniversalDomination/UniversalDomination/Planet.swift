@@ -11,19 +11,33 @@ import SpriteKit
 
 class Planet
 {
-    // how many troops on the planet
     var troops: Int = 0
+    var owner: Player?
+    var planetButton: UIButton
     
     
-    
-    init()
+    init(bttn: UIButton)
     {
+        troops = 0
+        planetButton = bttn
+        planetButton.setTitle(String(troops), for: UIControlState.normal)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+    public func addTroops(value: Int)
+    {
+        troops += value
     }
     
+    public func removeTroops(value: Int)
+    {
+        troops -= value
+    }
+    
+    public func getTroops() -> Int
+    {
+        return troops
+    }
     
     
 }

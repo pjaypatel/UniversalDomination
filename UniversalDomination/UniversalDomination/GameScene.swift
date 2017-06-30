@@ -16,7 +16,7 @@ class GameScene: SKScene
     let background = SKSpriteNode(imageNamed: "space1")
     
     // an empty array of planets
-    var planets = [Planet]()
+    
     
     override func didMove(to view: SKView)
     {
