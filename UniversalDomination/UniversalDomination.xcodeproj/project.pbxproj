@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		A751F9961EE8B89200589294 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751F9951EE8B89200589294 /* Planet.swift */; };
+		A782E32E1F05D6FA005CC9EF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782E32D1F05D6FA005CC9EF /* Player.swift */; };
+		A782E3301F0697C2005CC9EF /* PlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782E32F1F0697C2005CC9EF /* PlanetTests.swift */; };
+		A782E3321F069BA8005CC9EF /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782E3311F069BA8005CC9EF /* PlayerTests.swift */; };
 		A7D60F911EE8CE8900E625E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D60F901EE8CE8900E625E7 /* LaunchScreen.storyboard */; };
 		E90020B31EE076CF008A310B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020B21EE076CF008A310B /* AppDelegate.swift */; };
 		E90020B91EE076CF008A310B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020B81EE076CF008A310B /* GameScene.swift */; };
 		E90020BB1EE076CF008A310B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020BA1EE076CF008A310B /* GameViewController.swift */; };
 		E90020BE1EE076CF008A310B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90020BC1EE076CF008A310B /* Main.storyboard */; };
 		E90020C01EE076CF008A310B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90020BF1EE076CF008A310B /* Assets.xcassets */; };
-		E90020CE1EE076D0008A310B /* UniversalDominationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020CD1EE076D0008A310B /* UniversalDominationTests.swift */; };
 		E90020D91EE076D0008A310B /* UniversalDominationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90020D81EE076D0008A310B /* UniversalDominationUITests.swift */; };
 		E91F5B081F0430030041D887 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91F5B071F0430030041D887 /* SignInViewController.swift */; };
 		E91F5B0D1F05422F0041D887 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91F5B0B1F05422F0041D887 /* TestViewController.swift */; };
@@ -40,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		A751F9951EE8B89200589294 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		A782E32D1F05D6FA005CC9EF /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A782E32F1F0697C2005CC9EF /* PlanetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetTests.swift; sourceTree = "<group>"; };
+		A782E3311F069BA8005CC9EF /* PlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		A7D60F901EE8CE8900E625E7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90020AF1EE076CF008A310B /* UniversalDomination.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalDomination.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90020B21EE076CF008A310B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +54,6 @@
 		E90020BF1EE076CF008A310B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E90020C41EE076CF008A310B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E90020C91EE076D0008A310B /* UniversalDominationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalDominationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E90020CD1EE076D0008A310B /* UniversalDominationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalDominationTests.swift; sourceTree = "<group>"; };
 		E90020CF1EE076D0008A310B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E90020D41EE076D0008A310B /* UniversalDominationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalDominationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90020D81EE076D0008A310B /* UniversalDominationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalDominationUITests.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			children = (
 				E90020B21EE076CF008A310B /* AppDelegate.swift */,
 				A751F9951EE8B89200589294 /* Planet.swift */,
+				A782E32D1F05D6FA005CC9EF /* Player.swift */,
 				E90020B81EE076CF008A310B /* GameScene.swift */,
 				E90020BA1EE076CF008A310B /* GameViewController.swift */,
 				E91F5B071F0430030041D887 /* SignInViewController.swift */,
@@ -125,7 +130,8 @@
 		E90020CC1EE076D0008A310B /* UniversalDominationTests */ = {
 			isa = PBXGroup;
 			children = (
-				E90020CD1EE076D0008A310B /* UniversalDominationTests.swift */,
+				A782E32F1F0697C2005CC9EF /* PlanetTests.swift */,
+				A782E3311F069BA8005CC9EF /* PlayerTests.swift */,
 				E90020CF1EE076D0008A310B /* Info.plist */,
 			);
 			path = UniversalDominationTests;
@@ -279,6 +285,7 @@
 				E90020BB1EE076CF008A310B /* GameViewController.swift in Sources */,
 				E90020B31EE076CF008A310B /* AppDelegate.swift in Sources */,
 				E91F5B081F0430030041D887 /* SignInViewController.swift in Sources */,
+				A782E32E1F05D6FA005CC9EF /* Player.swift in Sources */,
 				E91F5B0D1F05422F0041D887 /* TestViewController.swift in Sources */,
 				A751F9961EE8B89200589294 /* Planet.swift in Sources */,
 			);
@@ -288,7 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E90020CE1EE076D0008A310B /* UniversalDominationTests.swift in Sources */,
+				A782E3321F069BA8005CC9EF /* PlayerTests.swift in Sources */,
+				A782E3301F0697C2005CC9EF /* PlanetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
