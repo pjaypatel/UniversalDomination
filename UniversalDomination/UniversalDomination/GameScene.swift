@@ -12,21 +12,15 @@ import GameplayKit
 
 class GameScene: SKScene
 {
-    // get the background image
     let background = SKSpriteNode(imageNamed: "space1")
-    
-    // an empty array of planets
-    
     
     override func didMove(to view: SKView)
     {
-        
         // setting up the background image
         background.scale(to: CGSize.init(width: frame.size.width, height: frame.size.height))
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         addChild(background)
-        
-        
+
     }
 
     

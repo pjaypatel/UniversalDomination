@@ -100,7 +100,7 @@ class GameViewController: UIViewController
     func updateTimer() {
         seconds -= 1
         countDownTimer.text = "\(seconds)"
-}
+    }
 
     @IBAction func DiceRoll(_ sender: UIButton) {
         
