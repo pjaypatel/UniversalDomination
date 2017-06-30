@@ -14,7 +14,7 @@ https://docs.google.com/spreadsheets/d/1R4cjnwTNLBMf2GdGuDK3-PWe63MBX3OPGu8qR6py
 https://docs.google.com/spreadsheets/d/1gk6zNO_h1iC-tShlzSe2qHKPYio21EIWgf4oH3kdTKg/edit?usp=sharing
 
 # Burndown Chart
-Imagine on a different file within github
+https://drive.google.com/open?id=0B9jST3m3ebRxbktDWnVwd3JTSXc
 
 # Design Documents 
 https://drive.google.com/open?id=0B9jST3m3ebRxc1BFNFR4bW8tYUk
