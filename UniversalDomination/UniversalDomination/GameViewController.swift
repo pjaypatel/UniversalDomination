@@ -16,6 +16,8 @@ class GameViewController: UIViewController
     var planets = [Planet]()
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
+    @IBOutlet weak var troopCountLabel: UILabel!
+    
 
 
     override func viewDidLoad()
@@ -103,13 +105,16 @@ class GameViewController: UIViewController
     }
 
     @IBAction func DiceRoll(_ sender: UIButton) {
-        
         let Number = arc4random_uniform(5) + 1
-        
         Dice.image = UIImage(named: "Dice\(Number)")
+        troopCountLabel.text = "\(Number)"
+        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when){
+            let Number2 = arc4random_uniform(5) + 1
+            self.Dice.image = UIImage(named: "Dice\(Number2)")
+            let totalTroops = Number + Number2
+            self.troopCountLabel.text = "\(totalTroops)"
+        }
     }
-
-
-
     
 }
