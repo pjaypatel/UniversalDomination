@@ -108,11 +108,10 @@ class GameViewController: UIViewController
             timerIsOn = false
         }
        // restart time
-        if timerIsOn == false {
+        timerIsOn = false
             secsAtk = 20
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
             timerIsOn = true
-        }
     }
    
     @IBAction func reinforceTime(_ sender: UIButton) {
