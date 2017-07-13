@@ -10,6 +10,7 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet var playerNames: [UITextField]!
     @IBOutlet weak var Player1AvatarChangerButton: UIButton!
     @IBOutlet weak var Player1AvatarImageView: UIImageView!
     @IBOutlet weak var Player2AvatarChangerButton: UIButton!
@@ -47,6 +48,8 @@ class SignInViewController: UIViewController {
         
         Player4AvatarImageView.image = image4
         view.addSubview(Player4AvatarImageView)
+        
+        
 
         
     }
@@ -79,14 +82,28 @@ class SignInViewController: UIViewController {
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "Game"
+        {
+            // pass data to next view
+            if let destination = segue.destination as? GameViewController
+            {
+                for index in 0...3
+                {
+                    destination.playerNames[index] = playerNames[index].text!
+                }
+            }
+            
+        }
     }
-    */
+ 
 
 }

@@ -14,6 +14,8 @@ class GameViewController: UIViewController
 {
     let numberOfPlanets = 10
     var planets = [Planet]()
+    var players = [Player]()
+    var playerNames: [String] = ["name", "name", "name", "name"]
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
@@ -34,18 +36,62 @@ class GameViewController: UIViewController
         skView.ignoresSiblingOrder = true
         scene.scaleMode = .resizeFill
         scene.scaleMode = .aspectFill
-        
-        
         skView.presentScene(scene)
         
-        
+        // add the planets
         for index in 1...numberOfPlanets
         {
             planets.append(Planet(bttn: PlanetButtons[index-1]))
         }
         
+        // add the players
+        for index in 0...3
+        {
+            players.append(Player(name: playerNames[index]))
+        }
         
+        game()
         
+    }
+    
+    func game()
+    {
+        // initial round of fortify at the begining of a game
+        for index in 0...3
+        {
+            players[index].isTurn = true
+            // start the timer here
+            players[index].fortify()
+            // end the timer here
+            players[index].isTurn = false
+        }
+        
+        // repeat for a number of times
+        for index in 0...3
+        {
+            players[index].isTurn = true
+            
+            // start the timer here
+            players[index].fortify()
+            // end the timer here
+            
+            // start the timer here
+            players[index].attack()
+            // end the timer here
+            
+            // start the timer here
+            players[index].reinforce()
+            // end the timer here
+            
+            players[index].isTurn = false
+        }
+        
+        endGame()
+    }
+    
+    func endGame()
+    {
+        // announce winner, end the game, and return to main menu
     }
     
     
@@ -54,7 +100,7 @@ class GameViewController: UIViewController
         let button = sender as AnyObject
         
         planets[button.tag].addTroops(value: 1)
-        button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
+        //button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
     }
     
     override var shouldAutorotate: Bool {

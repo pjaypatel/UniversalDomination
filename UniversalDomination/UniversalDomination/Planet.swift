@@ -27,11 +27,13 @@ class Planet
     public func addTroops(value: Int)
     {
         troops += value
+        planetButton.setTitle(String(troops), for: UIControlState.normal)
     }
     
     public func removeTroops(value: Int)
     {
         troops -= value
+        planetButton.setTitle(String(troops), for: UIControlState.normal)
     }
     
     public func getTroops() -> Int

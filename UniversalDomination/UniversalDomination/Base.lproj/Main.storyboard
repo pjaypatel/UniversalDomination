@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EzW-jc-0QP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EzW-jc-0QP">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -36,7 +36,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLe-Xu-8xH">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLe-Xu-8xH">
                                 <rect key="frame" x="550" y="103" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.87266175180000005" colorSpace="calibratedWhite"/>
@@ -51,7 +51,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0z-wJ-woa">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0z-wJ-woa">
                                 <rect key="frame" x="20" y="260" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.87266175180000005" colorSpace="calibratedWhite"/>
@@ -66,7 +66,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xyf-Rm-2i0">
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xyf-Rm-2i0">
                                 <rect key="frame" x="550" y="260" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.87266175180000005" colorSpace="calibratedWhite"/>
@@ -146,7 +146,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Game on!"/>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="presentation" id="gPh-az-Z8m"/>
+                                    <segue destination="BV1-FR-VrT" kind="presentation" identifier="Game" id="gPh-az-Z8m"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leP-gg-9ws" userLabel="Home">
@@ -171,6 +171,10 @@
                         <outlet property="Player3AvatarImageView" destination="gYc-gg-wY8" id="ObR-fI-ZbP"/>
                         <outlet property="Player4AvatarChangerButton" destination="u8T-B9-poF" id="rXN-uP-Ec9"/>
                         <outlet property="Player4AvatarImageView" destination="Mfv-sJ-bd9" id="izH-bB-6ID"/>
+                        <outletCollection property="playerNames" destination="C7w-qi-nbr" collectionClass="NSMutableArray" id="dF3-aD-FaI"/>
+                        <outletCollection property="playerNames" destination="gLe-Xu-8xH" collectionClass="NSMutableArray" id="LgZ-Dv-ts3"/>
+                        <outletCollection property="playerNames" destination="Y0z-wJ-woa" collectionClass="NSMutableArray" id="Gvc-5e-UaD"/>
+                        <outletCollection property="playerNames" destination="xyf-Rm-2i0" collectionClass="NSMutableArray" id="f38-SQ-2BA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSY-w1-I95" userLabel="First Responder" sceneMemberID="firstResponder"/>
