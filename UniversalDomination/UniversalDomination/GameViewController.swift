@@ -100,8 +100,6 @@ class GameViewController: UIViewController
     {
         let button = sender as AnyObject
         
-        planets[button.tag].addTroops(value: 1)
-        //button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
         if (numTroops > 0) {
             planets[button.tag].addTroops(value: 1)
             button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
