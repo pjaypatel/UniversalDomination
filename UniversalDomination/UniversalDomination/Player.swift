@@ -22,4 +22,18 @@ class Player
         isTurn = false
     }
 
+    func fortify()
+    {
+        
+    }
+    
+    func attack()
+    {
+        
+    }
+    
+    func reinforce()
+    {
+        
+    }
 }
