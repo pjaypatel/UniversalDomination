@@ -82,25 +82,62 @@ class GameViewController: UIViewController
 
     @IBOutlet weak internal var countDownTimer: UILabel!
     
-    var seconds = 60
+    var secsFort = 20
+    var secsAtk = 20
+    var secsRein = 20
+    var seconds = 20
     var timer = Timer()
     var timerIsOn = false
     
-    @IBAction func startButton(_ sender: Any) {
+
+    @IBAction func fortifyTime(_ sender: UIButton) {
+        // start timer once the fortify button is clicked on.
         if timerIsOn == false {
-            seconds = 60
+            secsRein = 20
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
             timerIsOn = true
         }
-        
+    }
+    
+    @IBAction func attackTime(_ sender: UIButton) {
+        // timer will restart on attack button. (Invalidate the time)
+        if timerIsOn == true {
+            timer.invalidate()
+            secsAtk = 20
+            countDownTimer.text = "\(seconds)"
+            timerIsOn = false
+        }
+       // restart time
+        if timerIsOn == false {
+            secsAtk = 20
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
+            timerIsOn = true
+        }
     }
    
-    @IBAction func endButton(_ sender: Any) {
-        timer.invalidate()
-        seconds = 0
-        countDownTimer.text = "\(seconds)"
-        timerIsOn = false
+    @IBAction func reinforceTime(_ sender: UIButton) {
+        // timer will restart on reinforce button. (Invalidate the time)
+        if timerIsOn == true {
+            timer.invalidate()
+            secsAtk = 20
+            countDownTimer.text = "\(seconds)"
+            timerIsOn = false
+        }
+        // restart time
+        if timerIsOn == false {
+            secsAtk = 20
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
+            timerIsOn = true
+        }
     }
+ 
+    
+   // @IBAction func endButton(_ sender: Any) {
+        //timer.invalidate()
+        //seconds = 0
+       // countDownTimer.text = "\(seconds)"
+       // timerIsOn = false
+  //  }
 
     func updateTimer() {
         seconds -= 1
