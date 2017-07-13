@@ -16,6 +16,7 @@ class GameViewController: UIViewController
     var planets = [Planet]()
     var players = [Player]()
     var playerNames: [String] = ["name", "name", "name", "name"]
+    var numTroops = 0
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
@@ -51,7 +52,7 @@ class GameViewController: UIViewController
         }
         
         game()
-        
+
     }
     
     func game()
@@ -101,6 +102,12 @@ class GameViewController: UIViewController
         
         planets[button.tag].addTroops(value: 1)
         //button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
+        if (numTroops > 0) {
+            planets[button.tag].addTroops(value: 1)
+            button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
+            numTroops -= 1
+            troopCountLabel.text = String(numTroops)
+        }
     }
     
     override var shouldAutorotate: Bool {
@@ -153,13 +160,14 @@ class GameViewController: UIViewController
     @IBAction func DiceRoll(_ sender: UIButton) {
         let Number = arc4random_uniform(5) + 1
         Dice.image = UIImage(named: "Dice\(Number)")
-        troopCountLabel.text = "\(Number)"
+        troopCountLabel.text = String(Number)
         let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when){
             let Number2 = arc4random_uniform(5) + 1
             self.Dice.image = UIImage(named: "Dice\(Number2)")
             let totalTroops = Number + Number2
-            self.troopCountLabel.text = "\(totalTroops)"
+            self.numTroops = Int(totalTroops)
+            self.troopCountLabel.text = String(totalTroops)
         }
     }
     
