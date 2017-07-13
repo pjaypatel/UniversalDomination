@@ -15,11 +15,13 @@ class GameViewController: UIViewController
     let numberOfPlanets = 10
     var planets = [Planet]()
     var numTroops = 0
+    var currentPhase = " "
+    var addBool = true
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
-    
-
+    @IBOutlet weak var Dice2: UIImageView!
+    @IBOutlet weak var decreaseButton: UIButton!
 
     override func viewDidLoad()
     {
@@ -45,6 +47,7 @@ class GameViewController: UIViewController
             planets.append(Planet(bttn: PlanetButtons[index-1]))
         }
         
+        decreaseButton.isHidden = true
         
     }
     
@@ -52,10 +55,16 @@ class GameViewController: UIViewController
     @IBAction func buttonClicked(_ sender: Any)
     {
         let button = sender as AnyObject
-        if (numTroops > 0) {
+        if (numTroops > 0 && addBool) {
             planets[button.tag].addTroops(value: 1)
             button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
             numTroops -= 1
+            troopCountLabel.text = String(numTroops)
+        }
+        else if(numTroops >= 0 && !addBool) {
+            planets[button.tag].removeTroops(value: 1)
+            button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
+            numTroops += 1
             troopCountLabel.text = String(numTroops)
         }
     }
@@ -109,7 +118,9 @@ class GameViewController: UIViewController
 
     @IBAction func DiceRoll(_ sender: UIButton) {
         let Number = arc4random_uniform(5) + 1
+        let Number1 = arc4random_uniform(5) + 1
         Dice.image = UIImage(named: "Dice\(Number)")
+        Dice2.image = UIImage(named: "Dice\(Number1)")
         troopCountLabel.text = String(Number)
         let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when){
@@ -120,5 +131,19 @@ class GameViewController: UIViewController
             self.troopCountLabel.text = String(totalTroops)
         }
     }
+    @IBAction func fortifyClicked(_ sender: UIButton) {
+        currentPhase = "Fortify"
+    }
+    @IBAction func attackClicked(_ sender: UIButton) {
+        currentPhase = "Attack"
+    }
+    @IBAction func reinforceClicked(_ sender: UIButton) {
+        currentPhase = "Reinforce"
+        decreaseButton.isHidden = false
+    }
+    @IBAction func decreaseTroopMode(_ sender: UIButton) {
+        addBool = false
+    }
+    
     
 }

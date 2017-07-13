@@ -316,10 +316,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dice1" translatesAutoresizingMaskIntoConstraints="NO" id="kS0-iM-Cba">
-                                <rect key="frame" x="0.0" y="289" width="86" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4B-GL-UDm">
                                 <rect key="frame" x="86" y="345" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -338,27 +334,36 @@
                                     <segue destination="EzW-jc-0QP" kind="presentation" id="xj0-Sq-Of3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5D-gc-ABd">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5D-gc-ABd" userLabel="Fortify">
                                 <rect key="frame" x="72" y="1" width="136" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" backgroundImage="Fortify">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="fortifyClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="MWE-X8-X1Z"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSk-vO-BY8">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSk-vO-BY8" userLabel="Attack">
                                 <rect key="frame" x="254" y="1" width="136" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Attack">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="attackClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="jYi-sV-2dc"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnu-CL-dhu">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnu-CL-dhu" userLabel="Reinforce">
                                 <rect key="frame" x="436" y="1" width="211" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Reinforce">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reinforceClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="tmV-9i-UBD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Troops: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7m-kR-Kbg">
                                 <rect key="frame" x="72" y="43" width="64" height="21"/>
@@ -374,12 +379,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPS-fV-Dmt">
+                                <rect key="frame" x="582" y="38" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Decrease"/>
+                                <connections>
+                                    <action selector="decreaseTroopMode:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Kze-3q-WXQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiA-tA-mYL">
+                                <rect key="frame" x="617" y="74" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dice1" translatesAutoresizingMaskIntoConstraints="NO" id="kS0-iM-Cba">
+                                <rect key="frame" x="0.0" y="289" width="86" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="Dice" destination="kS0-iM-Cba" id="qbw-Ct-cCX"/>
                         <outlet property="countDownTimer" destination="KgG-By-iYp" id="mXj-tb-Pnc"/>
+                        <outlet property="decreaseButton" destination="UPS-fV-Dmt" id="4OF-oC-45n"/>
                         <outlet property="troopCountLabel" destination="NKI-5i-IQd" id="GO8-5l-jd9"/>
                         <outletCollection property="PlanetButtons" destination="uGk-rs-H7U" collectionClass="NSMutableArray" id="d08-B9-4d7"/>
                         <outletCollection property="PlanetButtons" destination="set-JW-qGN" collectionClass="NSMutableArray" id="N5G-VR-rsA"/>
@@ -396,7 +419,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <barButtonItem enabled="NO" title="Item" id="Agh-ea-hHu"/>
             </objects>
-            <point key="canvasLocation" x="967.4662668665668" y="640.79999999999995"/>
+            <point key="canvasLocation" x="968" y="641"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="pUB-Yh-KCY">
