@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EzW-jc-0QP">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EzW-jc-0QP">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -171,6 +173,10 @@
                         <outlet property="Player3AvatarImageView" destination="gYc-gg-wY8" id="ObR-fI-ZbP"/>
                         <outlet property="Player4AvatarChangerButton" destination="u8T-B9-poF" id="rXN-uP-Ec9"/>
                         <outlet property="Player4AvatarImageView" destination="Mfv-sJ-bd9" id="izH-bB-6ID"/>
+                        <outlet property="player1Name" destination="C7w-qi-nbr" id="s17-31-8go"/>
+                        <outlet property="player2Name" destination="gLe-Xu-8xH" id="3sF-Hs-MWy"/>
+                        <outlet property="player3Name" destination="Y0z-wJ-woa" id="fKs-tq-95b"/>
+                        <outlet property="player4Name" destination="xyf-Rm-2i0" id="Dch-qW-4Un"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSY-w1-I95" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -374,12 +380,83 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNO-SW-Jb5">
+                                <rect key="frame" x="493" y="271" width="174" height="104"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tgv-tF-vMF">
+                                        <rect key="frame" x="8" y="19" width="67" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="67" id="Zez-6b-H0i"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REX-fB-CFa">
+                                        <rect key="frame" x="83" y="35" width="83" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCd-h8-m3j">
+                                        <rect key="frame" x="83" y="64" width="83" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ana-oz-mUJ">
+                                        <rect key="frame" x="83" y="8" width="83" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ4-Pv-9fw">
+                                        <rect key="frame" x="8" y="19" width="62" height="66"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playerChangeButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="jml-eW-dku"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ZJ4-Pv-9fw" firstAttribute="top" secondItem="Tgv-tF-vMF" secondAttribute="top" id="2Cn-z2-OwD"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tgv-tF-vMF" secondAttribute="bottom" constant="19" id="2t3-EI-5cl"/>
+                                    <constraint firstItem="Tgv-tF-vMF" firstAttribute="leading" secondItem="ZNO-SW-Jb5" secondAttribute="leading" constant="8" id="55T-2P-AGC"/>
+                                    <constraint firstAttribute="height" constant="104" id="5bO-zj-mXm"/>
+                                    <constraint firstItem="ZJ4-Pv-9fw" firstAttribute="leading" secondItem="Tgv-tF-vMF" secondAttribute="leading" id="D31-oG-tXS"/>
+                                    <constraint firstItem="pCd-h8-m3j" firstAttribute="top" secondItem="REX-fB-CFa" secondAttribute="bottom" constant="8" id="EjP-Df-eez"/>
+                                    <constraint firstItem="REX-fB-CFa" firstAttribute="top" secondItem="ana-oz-mUJ" secondAttribute="bottom" constant="6" id="OvU-Q7-jhW"/>
+                                    <constraint firstItem="ana-oz-mUJ" firstAttribute="leading" secondItem="ZJ4-Pv-9fw" secondAttribute="trailing" constant="13" id="PgA-55-sdS"/>
+                                    <constraint firstAttribute="bottom" secondItem="pCd-h8-m3j" secondAttribute="bottom" constant="19" id="QVG-SY-Cfr"/>
+                                    <constraint firstItem="REX-fB-CFa" firstAttribute="leading" secondItem="pCd-h8-m3j" secondAttribute="leading" id="cOA-Dr-fxr"/>
+                                    <constraint firstAttribute="trailing" secondItem="pCd-h8-m3j" secondAttribute="trailing" constant="8" id="d1c-NZ-Ek9"/>
+                                    <constraint firstItem="ana-oz-mUJ" firstAttribute="leading" secondItem="REX-fB-CFa" secondAttribute="leading" id="dJJ-L8-aRv"/>
+                                    <constraint firstAttribute="width" secondItem="ZNO-SW-Jb5" secondAttribute="height" multiplier="97:58" id="h0j-25-ZGk"/>
+                                    <constraint firstAttribute="trailing" secondItem="REX-fB-CFa" secondAttribute="trailing" constant="8" id="n6i-HS-sLk"/>
+                                    <constraint firstItem="pCd-h8-m3j" firstAttribute="top" secondItem="REX-fB-CFa" secondAttribute="bottom" constant="8" symbolic="YES" id="nBc-2h-agV"/>
+                                    <constraint firstItem="ana-oz-mUJ" firstAttribute="top" secondItem="ZNO-SW-Jb5" secondAttribute="topMargin" id="qc2-Ea-jgp"/>
+                                    <constraint firstAttribute="width" constant="174" id="s6U-2d-H2L"/>
+                                    <constraint firstItem="pCd-h8-m3j" firstAttribute="bottom" secondItem="Tgv-tF-vMF" secondAttribute="bottom" id="uKl-7Q-r3t"/>
+                                    <constraint firstAttribute="trailing" secondItem="ana-oz-mUJ" secondAttribute="trailing" constant="8" id="vBo-wQ-W3Y"/>
+                                    <constraint firstItem="Tgv-tF-vMF" firstAttribute="top" secondItem="ZNO-SW-Jb5" secondAttribute="top" constant="19" id="wqc-pd-Rdn"/>
+                                    <constraint firstItem="ZJ4-Pv-9fw" firstAttribute="bottom" secondItem="Tgv-tF-vMF" secondAttribute="bottom" id="xRy-VU-lxL"/>
+                                    <constraint firstItem="ana-oz-mUJ" firstAttribute="top" secondItem="ZNO-SW-Jb5" secondAttribute="top" constant="8" id="xbj-ka-wG3"/>
+                                    <constraint firstItem="ana-oz-mUJ" firstAttribute="leading" secondItem="Tgv-tF-vMF" secondAttribute="trailing" constant="8" symbolic="YES" id="zx5-wV-RM1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="ZNO-SW-Jb5" secondAttribute="bottom" id="JyE-eY-irF"/>
+                            <constraint firstAttribute="trailing" secondItem="ZNO-SW-Jb5" secondAttribute="trailing" id="v9T-Lb-f1N"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="Dice" destination="kS0-iM-Cba" id="qbw-Ct-cCX"/>
                         <outlet property="countDownTimer" destination="KgG-By-iYp" id="mXj-tb-Pnc"/>
+                        <outlet property="playerImage" destination="Tgv-tF-vMF" id="Wyp-WP-XaJ"/>
+                        <outlet property="playerName" destination="ana-oz-mUJ" id="Ofz-Au-joY"/>
+                        <outlet property="playerScore" destination="pCd-h8-m3j" id="AAB-8V-Cne"/>
                         <outlet property="troopCountLabel" destination="NKI-5i-IQd" id="GO8-5l-jd9"/>
                         <outletCollection property="PlanetButtons" destination="uGk-rs-H7U" collectionClass="NSMutableArray" id="d08-B9-4d7"/>
                         <outletCollection property="PlanetButtons" destination="set-JW-qGN" collectionClass="NSMutableArray" id="N5G-VR-rsA"/>

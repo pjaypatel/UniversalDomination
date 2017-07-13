@@ -15,17 +15,29 @@ class GameViewController: UIViewController
     let numberOfPlanets = 10
     var planets = [Planet]()
     var numTroops = 0
+    var player = [Player]()
+    var index = 0
+    
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
     
 
+    @IBOutlet weak var playerImage: UIImageView!
+    @IBOutlet weak var playerName: UILabel!
+    @IBOutlet weak var playerScore: UILabel!
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         let scene = GameScene(size: view.bounds.size)
+        
+        if (player.count > 0) {
+            playerImage.image = player[0].image
+            playerName.text = player[0].name
+            playerScore.text = String(player[0].score)
+        }
         
         // configure the view
         let skView = view as! SKView
@@ -48,6 +60,28 @@ class GameViewController: UIViewController
         
     }
     
+    @IBAction func playerChangeButton(_ sender: Any) {
+        if (index == player.count-1) {
+                index = -1
+        }
+        playerImage.image = player[index+1].image
+        playerName.text = player[index+1].name
+        playerScore.text = String(player[index+1].score)
+        index = index + 1
+
+//        for index in 0...player.count-1{
+//            var num = index
+//            if (player[num].image.isEqual(playerImage.image)){
+////            if (player[num].image == playerImage.image){
+//                if (num == player.count-1) {
+//                    num = -1
+//                }
+//                playerImage.image = player[num+1].image
+//                playerName.text = player[num+1].name
+//                playerScore.text = String(player[num+1].score)
+//            }
+//        }
+    }
     
     @IBAction func buttonClicked(_ sender: Any)
     {

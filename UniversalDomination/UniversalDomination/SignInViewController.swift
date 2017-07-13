@@ -19,11 +19,17 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var Player4AvatarChangerButton: UIButton!
     @IBOutlet weak var Player4AvatarImageView: UIImageView!
     
+    @IBOutlet weak var player1Name: UITextField!
+    @IBOutlet weak var player3Name: UITextField!
+    @IBOutlet weak var player2Name: UITextField!
+    @IBOutlet weak var player4Name: UITextField!
+    
     var counter1 = 0;
     var counter2 = 1;
     var counter3 = 2;
     var counter4 = 3;
     
+    var player:Player?
     
     let image1 : UIImage = UIImage(named: "alien1")!
     let image2 : UIImage = UIImage(named: "alien2")!
@@ -83,10 +89,28 @@ class SignInViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+  */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let nextVC = segue.destination as? GameViewController {
+            let player1 = Player(name: player1Name.text!)
+            player1.image = Player1AvatarImageView.image!
+            
+            let player2 = Player(name: player2Name.text!)
+            player2.image = Player2AvatarImageView.image!
+            
+            let player3 = Player(name: player3Name.text!)
+            player3.image = Player3AvatarImageView.image!
+            
+            let player4 = Player(name: player4Name.text!)
+            player4.image = Player4AvatarImageView.image!
+            
+            nextVC.player = [player1,player2,player3,player4];
+            
+        }
     }
-    */
+ 
 
 }
