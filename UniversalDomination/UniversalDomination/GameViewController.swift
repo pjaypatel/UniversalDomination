@@ -17,6 +17,7 @@ class GameViewController: UIViewController
     var players = [Player]()
     var playerNames: [String] = ["name", "name", "name", "name"]
     var numTroops = 0
+    var addBool = true
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
@@ -102,12 +103,16 @@ class GameViewController: UIViewController
     {
         let button = sender as AnyObject
         
-        planets[button.tag].addTroops(value: 1)
-        //button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
-        if (numTroops > 0) {
+        if (numTroops > 0 && addBool) {
             planets[button.tag].addTroops(value: 1)
             button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
             numTroops -= 1
+            troopCountLabel.text = String(numTroops)
+        }
+        else if (planets[button.tag].troops > 0 && !addBool) {
+            planets[button.tag].removeTroops(value: 1)
+            button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
+            numTroops += 1
             troopCountLabel.text = String(numTroops)
         }
     }
@@ -176,5 +181,15 @@ class GameViewController: UIViewController
             self.troopCountLabel.text = String(totalTroops)
         }
     }
+    @IBAction func reinforceClicked(_ sender: UIButton) {
+        addButton.isHidden = false
+        removeButton.isHidden = false
+    }
+    @IBAction func reinforceAddTroops(_ sender: UIButton){
+        addBool = true
+    }
     
+    @IBAction func reinforceRemoveTroops(_ sender: UIButton) {
+        addBool = false
+    }
 }
