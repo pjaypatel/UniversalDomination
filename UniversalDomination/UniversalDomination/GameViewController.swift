@@ -21,6 +21,8 @@ class GameViewController: UIViewController
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
     
+    @IBOutlet weak var Dice2: UIImageView!
+    
 
 
     override func viewDidLoad()
@@ -157,15 +159,19 @@ class GameViewController: UIViewController
         countDownTimer.text = "\(seconds)"
     }
 
+
+    
     @IBAction func DiceRoll(_ sender: UIButton) {
+        
+    
+        
         let Number = arc4random_uniform(5) + 1
         Dice.image = UIImage(named: "Dice\(Number)")
+       // Dice2.image = UIImage(named: "Dice2\(Number)")
         troopCountLabel.text = String(Number)
-        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+        let when = DispatchTime.now() + 1// change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when){
-            let Number2 = arc4random_uniform(5) + 1
-            self.Dice.image = UIImage(named: "Dice\(Number2)")
-            let totalTroops = Number + Number2
+            let totalTroops = Number
             self.numTroops = Int(totalTroops)
             self.troopCountLabel.text = String(totalTroops)
         }
