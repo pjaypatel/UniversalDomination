@@ -96,6 +96,10 @@ class SignInViewController: UIViewController {
             // pass data to next view
             if let destination = segue.destination as? GameViewController
             {
+                destination.imageList[0] = counter1 + 1
+                destination.imageList[1] = counter2 + 1
+                destination.imageList[2] = counter3 + 1
+                destination.imageList[3] = counter4 + 1
                 for index in 0...3
                 {
                     destination.playerNames[index] = playerNames[index].text!
