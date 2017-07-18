@@ -21,5 +21,7 @@ class Player
         score = 0
         isTurn = false
     }
+    
+    
 
 }
