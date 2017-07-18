@@ -15,6 +15,7 @@ class GameViewController: UIViewController
     let numberOfPlanets = 10
     var planets = [Planet]()
     var players = [Player]()
+    var imageList:[Int] = [0,1,2,3]
     var playerNames: [String] = ["name", "name", "name", "name"]
     var numTroops = 0
     var addBool = true
@@ -25,7 +26,26 @@ class GameViewController: UIViewController
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var removeButton: UIButton!
 
-
+    //Player 1
+    @IBOutlet weak var player1Image: UIImageView!
+    @IBOutlet weak var player1Name: UILabel!
+    @IBOutlet weak var player1Score: UILabel!
+    
+    //Player 2
+    @IBOutlet weak var player2Image: UIImageView!
+    @IBOutlet weak var player2Name: UILabel!
+    @IBOutlet weak var player2Score: UILabel!
+    
+    //Player 3
+    @IBOutlet weak var player3Image: UIImageView!
+    @IBOutlet weak var player3Name: UILabel!
+    @IBOutlet weak var player3Score: UILabel!
+    
+    //Player 4
+    @IBOutlet weak var player4Image: UIImageView!
+    @IBOutlet weak var player4Name: UILabel!
+    @IBOutlet weak var player4Score: UILabel!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -51,9 +71,28 @@ class GameViewController: UIViewController
         // add the players
         for index in 0...3
         {
+            if playerNames[index].isEmpty {
+                playerNames[index] = "Player\(index + 1):"
+            }
             players.append(Player(name: playerNames[index]))
         }
         
+        player1Name.text = playerNames[0]
+        player1Score.text = String(players[0].score)
+        player1Image.image = UIImage(named: "alien\(imageList[0])")!
+        
+        player2Name.text = playerNames[1]
+        player2Score.text = String(players[1].score)
+        player2Image.image = UIImage(named: "alien\(imageList[1])")!
+
+        player3Name.text = playerNames[2]
+        player3Score.text = String(players[2].score)
+        player3Image.image = UIImage(named: "alien\(imageList[2])")!
+
+        player4Name.text = playerNames[3]
+        player4Score.text = String(players[3].score)
+        player4Image.image = UIImage(named: "alien\(imageList[3])")!
+
         game()
 
     }
