@@ -24,6 +24,19 @@ class GameViewController: UIViewController
     
     @IBOutlet weak var Dice2: UIImageView!
     
+   
+    
+    @IBAction func Attack_Clicked(_ sender: UIButton) {
+        Dice.isHidden = false
+        Dice2.isHidden = false
+        
+        
+        
+    }
+    @IBAction func EndAction(_ sender: UIButton) {
+        Dice.isHidden = true
+        Dice2.isHidden = true
+    }
     
 
     override func viewDidLoad()
