@@ -45,6 +45,9 @@ class GameViewController: UIViewController
             planets.append(Planet(bttn: PlanetButtons[index-1]))
         }
         
+        if seconds == 0 {
+            timerIsOn = false
+        }
         
     }
     
@@ -82,9 +85,6 @@ class GameViewController: UIViewController
 
     @IBOutlet weak internal var countDownTimer: UILabel!
     
-    var secsFort = 20
-    var secsAtk = 20
-    var secsRein = 20
     var seconds = 20
     var timer = Timer()
     var timerIsOn = false
@@ -93,38 +93,25 @@ class GameViewController: UIViewController
     @IBAction func fortifyTime(_ sender: UIButton) {
         // start timer once the fortify button is clicked on.
         if timerIsOn == false {
-            secsRein = 20
+            seconds = 20
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
             timerIsOn = true
         }
     }
     
     @IBAction func attackTime(_ sender: UIButton) {
-        // timer will restart on attack button. (Invalidate the time)
-        if timerIsOn == true {
-            timer.invalidate()
-            secsAtk = 20
-            countDownTimer.text = "\(seconds)"
-            timerIsOn = false
-        }
        // restart time
-        timerIsOn = false
-            secsAtk = 20
+        if timerIsOn == false {
+            seconds = 20
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
             timerIsOn = true
+        }
     }
    
     @IBAction func reinforceTime(_ sender: UIButton) {
-        // timer will restart on reinforce button. (Invalidate the time)
-        if timerIsOn == true {
-            timer.invalidate()
-            secsAtk = 20
-            countDownTimer.text = "\(seconds)"
-            timerIsOn = false
-        }
-        // restart time
+        // timer will restart on reinforce button
         if timerIsOn == false {
-            secsAtk = 20
+            seconds = 20
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
             timerIsOn = true
         }
@@ -141,6 +128,11 @@ class GameViewController: UIViewController
     func updateTimer() {
         seconds -= 1
         countDownTimer.text = "\(seconds)"
+        
+        if seconds == 0 {
+                timer.invalidate()
+                timerIsOn = false
+        }
     }
 
     @IBAction func DiceRoll(_ sender: UIButton) {
