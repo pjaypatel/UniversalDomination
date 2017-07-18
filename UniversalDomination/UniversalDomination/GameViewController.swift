@@ -24,7 +24,7 @@ class GameViewController: UIViewController
     
     @IBOutlet weak var Dice2: UIImageView!
     
-
+    
 
     override func viewDidLoad()
     {
@@ -165,6 +165,7 @@ class GameViewController: UIViewController
     }
 
 
+    //Dice.isHidden = true
     
     @IBAction func DiceRoll(_ sender: UIButton) {
         
