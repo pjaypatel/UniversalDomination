@@ -112,6 +112,7 @@ class GameViewController: UIViewController
         if timerIsOn == true {
             timer.invalidate()
         }
+        
         // restart time
         seconds = 20
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
