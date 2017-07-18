@@ -182,8 +182,8 @@ class GameViewController: UIViewController
         }
     }
     @IBAction func reinforceClicked(_ sender: UIButton) {
-        addButton.isHidden = false
-        removeButton.isHidden = false
+        //addButton.isHidden = false
+        //removeButton.isHidden = false
     }
     @IBAction func reinforceAddTroops(_ sender: UIButton){
         addBool = true
