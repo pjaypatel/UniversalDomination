@@ -20,7 +20,7 @@ class GameViewController: UIViewController
     @IBOutlet weak var troopCountLabel: UILabel!
     
 
-
+// :)
     override func viewDidLoad()
     {
         super.viewDidLoad()
