@@ -13,14 +13,20 @@ import GameplayKit
 class GameViewController: UIViewController
 {
     let numberOfPlanets = 10
+    var currentPlayer = 3
     var planets = [Planet]()
     var players = [Player]()
+    var imageList:[Int] = [0,1,2,3]
     var playerNames: [String] = ["name", "name", "name", "name"]
     var numTroops = 0
     var addBool = true
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
+    @IBOutlet weak var DoneButton: UIButton!
+    @IBOutlet weak var Action: UIImageView!
+    
+    @IBOutlet var TurnShadow: [UIImageView]!
     
     @IBOutlet weak var Dice2: UIImageView!
     
@@ -64,56 +70,91 @@ class GameViewController: UIViewController
         // add the players
         for index in 0...3
         {
+            if playerNames[index].isEmpty {
+                playerNames[index] = "Player\(index + 1):"
+            }
             players.append(Player(name: playerNames[index]))
         }
         
-        game()
+        for i in TurnShadow
+        {
+            i.isHidden = true
+        }
+        
+        player1Name.text = playerNames[0]
+        player1Score.text = String(players[0].score)
+        player1Image.image = UIImage(named: "alien\(imageList[0])")!
+        
+        player2Name.text = playerNames[1]
+        player2Score.text = String(players[1].score)
+        player2Image.image = UIImage(named: "alien\(imageList[1])")!
+
+        player3Name.text = playerNames[2]
+        player3Score.text = String(players[2].score)
+        player3Image.image = UIImage(named: "alien\(imageList[2])")!
+
+        player4Name.text = playerNames[3]
+        player4Score.text = String(players[3].score)
+        player4Image.image = UIImage(named: "alien\(imageList[3])")!
 
     }
     
-    func game()
-    {
-        // initial round of fortify at the begining of a game
-        for index in 0...3
+    // timer to control the turns
+    var GameTimer = Timer()
+    
+    // 0 == fortify, 1 == attack, 2 == reinforce
+    // maybe use this to know which action should be happening when a planet is clicked
+    var currentAction = 0
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // I can't find a better way of controlling the turns, we need to stop this after the initial round of fortify
+        GameTimer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(GameViewController.fortify), userInfo: nil, repeats: true)
+        
+    }
+
+    
+    func fortify(){
+        
+        startButton() // <--- starts the timer for a turn
+        
+        if currentPlayer == 3
         {
-            players[index].isTurn = true
-            // start the timer here
-            players[index].fortify()
-            // end the timer here
-            players[index].isTurn = false
+            TurnShadow[currentPlayer].isHidden = true
+            players[currentPlayer].isTurn = false
+            currentPlayer = 0
+        }
+        else {
+            TurnShadow[currentPlayer].isHidden = true
+            players[currentPlayer].isTurn = false
+            currentPlayer += 1
         }
         
-        // repeat for a number of times
-        for index in 0...3
+        TurnShadow[currentPlayer].isHidden = false
+        players[currentPlayer].isTurn = true
+        
+        
+        for i in planets
         {
-            players[index].isTurn = true
-            
-            // start the timer here
-            players[index].fortify()
-            // end the timer here
-            
-            // start the timer here
-            players[index].attack()
-            // end the timer here
-            
-            // start the timer here
-            players[index].reinforce()
-            // end the timer here
-            
-            players[index].isTurn = false
+            if i.owner == nil
+            {
+                // i.planetButton. <<-- do something with the planets without owners
+            }
         }
         
-        endGame()
+        //print("turn") <<-- I was using this for debug
+        
     }
     
+  
     func endGame()
     {
         // announce winner, end the game, and return to main menu
     }
     
     
-    @IBAction func buttonClicked(_ sender: Any)
-    {
+    @IBAction func buttonClicked(_ sender: Any) {
+        
         let button = sender as AnyObject
         
         if (numTroops > 0 && addBool) {
@@ -129,6 +170,8 @@ class GameViewController: UIViewController
             troopCountLabel.text = String(numTroops)
         }
     }
+    
+   
     
     override var shouldAutorotate: Bool {
         return true
@@ -152,29 +195,40 @@ class GameViewController: UIViewController
 
     @IBOutlet weak internal var countDownTimer: UILabel!
     
-    var seconds = 60
+    var seconds = 30
     var timer = Timer()
     var timerIsOn = false
     
-    @IBAction func startButton(_ sender: Any) {
-        if timerIsOn == false {
-            seconds = 60
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
+    func startButton()
+    {
+        //if timerIsOn == false {
+            seconds = 30
             timerIsOn = true
-        }
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.updateTimer), userInfo: nil, repeats: true)
+        //}
         
     }
    
-    @IBAction func endButton(_ sender: Any) {
-        timer.invalidate()
+    func endButton() {
         seconds = 0
         countDownTimer.text = "\(seconds)"
         timerIsOn = false
+        timer.invalidate()
     }
 
     func updateTimer() {
-        seconds -= 1
-        countDownTimer.text = "\(seconds)"
+        
+        //print(seconds) <-- I was using this for debug
+        
+        // stops the timer from going negative
+        if timerIsOn == true {
+            seconds -= 1
+            countDownTimer.text = "\(seconds)"
+        }
+        
+        if seconds == 0 {
+            endButton()
+        }
     }
 
 
@@ -203,7 +257,8 @@ class GameViewController: UIViewController
         addBool = true
     }
     
-    @IBAction func reinforceRemoveTroops(_ sender: UIButton) {
-        addBool = false
+    // this ends the visible timer but doesn't change the turn
+    @IBAction func doneClicked(_ sender: Any) {
+        endButton()
     }
 }
