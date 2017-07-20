@@ -112,6 +112,7 @@ class GameViewController: UIViewController
     
     // 0 == fortify, 1 == attack, 2 == reinforce
     var currentAction = 0
+    var initFort = true
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -193,6 +194,54 @@ class GameViewController: UIViewController
         
         }
         
+        if initFort == true {
+            
+            initFortify()
+        }
+        else {
+            
+            // fortify
+            if currentAction == 0 {
+            
+                print("fortify")
+                
+                TurnShadow[currentPlayer].isHidden = true
+                currentPlayer = (currentPlayer+1)%4
+                
+                TurnShadow[currentPlayer].isHidden = false
+                
+                Action.image = UIImage(named: "Fortify")
+                startButton()
+                
+                // add any prep for fortify
+            
+            }
+            // attack
+            else if currentAction == 1 {
+            
+                print("attack")
+                
+                Action.image = UIImage(named: "Attack")
+                startButton()
+                
+                // add any prep for attack
+            }
+            // reinforce
+            else if currentAction == 2 {
+                
+                print("reinforce")
+                
+                Action.image = UIImage(named: "Reinforce")
+                startButton()
+                
+                // add any prep for reinforce
+            }
+            
+            currentAction = (currentAction+1)%3
+        
+        }
+        
+    
     }
     
        
