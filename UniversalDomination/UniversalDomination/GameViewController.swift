@@ -117,7 +117,7 @@ class GameViewController: UIViewController
     override func viewDidAppear(_ animated: Bool) {
         
         // I can't find a better way of controlling the turns, we need to stop this after the initial round of fortify
-        GameTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(GameViewController.fortify), userInfo: nil, repeats: true)
+        GameTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(GameViewController.turn), userInfo: nil, repeats: true)
         
     }
 
