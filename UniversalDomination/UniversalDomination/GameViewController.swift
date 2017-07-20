@@ -109,36 +109,27 @@ class GameViewController: UIViewController
     var GameTimer = Timer()
     
     // 0 == fortify, 1 == attack, 2 == reinforce
-    // maybe use this to know which action should be happening when a planet is clicked
     var currentAction = 0
+    var initFort = true
     
     override func viewDidAppear(_ animated: Bool) {
         
         // I can't find a better way of controlling the turns, we need to stop this after the initial round of fortify
-        GameTimer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(GameViewController.fortify), userInfo: nil, repeats: true)
+        GameTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(GameViewController.turn), userInfo: nil, repeats: true)
         
     }
 
     
-    func fortify(){
+    func initFortify(){
+        
+        print("initFortify")
         
         startButton() // <--- starts the timer for a turn
         
-        if currentPlayer == 3
-        {
-            TurnShadow[currentPlayer].isHidden = true
-            players[currentPlayer].isTurn = false
-            currentPlayer = 0
-        }
-        else {
-            TurnShadow[currentPlayer].isHidden = true
-            players[currentPlayer].isTurn = false
-            currentPlayer += 1
-        }
+        TurnShadow[currentPlayer].isHidden = true
+        currentPlayer = (currentPlayer+1)%4
         
         TurnShadow[currentPlayer].isHidden = false
-        players[currentPlayer].isTurn = true
-        
         
         for i in planets
         {
@@ -149,7 +140,62 @@ class GameViewController: UIViewController
         }
         
         //print("turn") <<-- I was using this for debug
+        if currentPlayer == 3 {
+            initFort = false
+        }
         
+    }
+    
+    func turn() {
+        
+        if initFort == true {
+            
+            initFortify()
+        }
+        else {
+            
+            // fortify
+            if currentAction == 0 {
+            
+                print("fortify")
+                
+                TurnShadow[currentPlayer].isHidden = true
+                currentPlayer = (currentPlayer+1)%4
+                
+                TurnShadow[currentPlayer].isHidden = false
+                
+                Action.image = UIImage(named: "Fortify")
+                startButton()
+                
+                // add any prep for fortify
+            
+            }
+            // attack
+            else if currentAction == 1 {
+            
+                print("attack")
+                
+                Action.image = UIImage(named: "Attack")
+                startButton()
+                
+                // add any prep for attack
+            }
+            // reinforce
+            else if currentAction == 2 {
+                
+                print("reinforce")
+                
+                Action.image = UIImage(named: "Reinforce")
+                startButton()
+                
+                // add any prep for reinforce
+            }
+            
+            currentAction = (currentAction+1)%3
+        
+        }
+        
+    
     }
     
   
@@ -201,14 +247,14 @@ class GameViewController: UIViewController
 
     @IBOutlet weak internal var countDownTimer: UILabel!
     
-    var seconds = 30
+    var seconds = 20
     var timer = Timer()
     var timerIsOn = false
     
     func startButton()
     {
         //if timerIsOn == false {
-            seconds = 30
+            seconds = 20
             timerIsOn = true
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.updateTimer), userInfo: nil, repeats: true)
         //}
