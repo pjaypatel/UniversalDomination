@@ -195,36 +195,7 @@ class GameViewController: UIViewController
         
     }
     
-    /*var actionControl = 0
-    
-    func turn(){
-        
-        TurnShadow[currentPlayer].isHidden = true
-        currentPlayer = (currentPlayer+1) % 4
-        
-        TurnShadow[currentPlayer].isHidden = false
-        
-        ActionTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(GameViewController.action), userInfo: nil, repeats: true)
-        
-        print("turn") //<<-- I was using this for debug
-        
-    }
-    
-    func action(){
-        
-        if actionControl == 3 {
-            actionControl = 0
-            ActionTimer.invalidate()
-        }
-        else {
-            currentAction = (currentAction+1) % 3
-            startTimer(sec: 10)
-        }
-        
-        print("action")
-    
-    }*/
-    
+       
     func endGame()
     {
         // announce winner, end the game, and return to main menu
