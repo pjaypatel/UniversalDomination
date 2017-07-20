@@ -73,4 +73,5 @@ class Player
             numTroops += 1
         }
     }
+
 }
