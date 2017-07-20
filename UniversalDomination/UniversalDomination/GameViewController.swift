@@ -152,10 +152,30 @@ class GameViewController: UIViewController
         
     }
     
-  
+    
+    //announce winner, end the game, and return to main menu
+
+    @IBOutlet weak var EndGameView: UIView!
+    @IBOutlet weak var WinnerLabel: UILabel!
+    @IBOutlet weak var Return: UIButton!
     func endGame()
     {
-        // announce winner, end the game, and return to main menu
+        
+       if player1Score.text! > player2Score.text! && player1Score.text! > player3Score.text! && player1Score.text! > player4Score.text!       {
+          WinnerLabel.text = String(describing: player1Name)
+       }
+       else if (player2Score.text! > player1Score.text! && player2Score.text! > player3Score.text! && player2Score.text! > player4Score.text!){
+        
+        WinnerLabel.text = String(describing: player2Name)
+        }
+       else if (player3Score.text! > player1Score.text! && player3Score.text! > player2Score.text! && player3Score.text! > player4Score.text!){
+        WinnerLabel.text = String(describing: player3Name)
+        }
+       else if (player4Score.text! > player1Score.text! && player4Score.text! > player3Score.text! && player4Score.text! > player2Score.text!) {
+        WinnerLabel.text = String(describing: player4Name)
+        }
+        
+        
     }
     
     
