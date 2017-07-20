@@ -20,7 +20,6 @@ class GameViewController: UIViewController
     var playerNames: [String] = ["name", "name", "name", "name"]
     var numTroops = 0
     var addBool = true
-    var attackFlag = 0
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
@@ -201,31 +200,18 @@ class GameViewController: UIViewController
         
         let button = sender as AnyObject
         
-        if (currentAction == 0) {
-            players[currentPlayer].fortify(player: players[currentPlayer], planet: planets[button.tag], numTroops: &numTroops)
+        if (numTroops > 0 && addBool) {
+            planets[button.tag].addTroops(value: 1)
+            button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
+            numTroops -= 1
+            troopCountLabel.text = String(numTroops)
         }
-        else if (currentAction == 1) {
-            players[currentPlayer].attack(attacker: planets[button.tag], defender: planets[button.tag], whatToDo: &attackFlag)
+        else if (planets[button.tag].troops > 0 && !addBool) {
+            planets[button.tag].removeTroops(value: 1)
+            button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
+            numTroops += 1
+            troopCountLabel.text = String(numTroops)
         }
-        else if (currentAction == 2) {
-            players[currentPlayer].reinforce(planet: planets[button.tag], numTroops: &numTroops, addBool: addBool)
-        }
-        
-        troopCountLabel.text = String(numTroops)
-        
-//        if (numTroops > 0 && addBool) {
-//            planets[button.tag].addTroops(value: 1)
-//            button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
-//            numTroops -= 1
-//            troopCountLabel.text = String(numTroops)
-//        }
-//        else if (planets[button.tag].troops > 0 && !addBool) {  
-//            planets[button.tag].removeTroops(value: 1)
-//            button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
-//            numTroops += 1
-//            troopCountLabel.text = String(numTroops)
-//        }
-        // need to add what happens if change ownership
     }
     
    
@@ -287,6 +273,8 @@ class GameViewController: UIViewController
             endTimer()
         }
     }
+
+
     //Dice.isHidden = true
     
     @IBAction func DiceRoll(_ sender: UIButton) {
