@@ -459,6 +459,9 @@
                                         <rect key="frame" x="16" y="52" width="91" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Return Home"/>
+                                        <connections>
+                                            <segue destination="EzW-jc-0QP" kind="show" id="hpW-1O-tof"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvX-B2-odG">
                                         <rect key="frame" x="40" y="23" width="42" height="21"/>
@@ -620,6 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeF-2d-Qql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="17" y="47"/>
         </scene>
     </scenes>
     <resources>

@@ -161,18 +161,23 @@ class GameViewController: UIViewController
     func endGame()
     {
         
-       if player1Score.text! > player2Score.text! && player1Score.text! > player3Score.text! && player1Score.text! > player4Score.text!       {
-          WinnerLabel.text = String(describing: player1Name)
-       }
+       if player1Score.text! > player2Score.text! && player1Score.text! > player3Score.text! && player1Score.text! > player4Score.text! {
+          EndGameView.isHidden = false
+          WinnerLabel.text = "The winner is \(player1Name.text!)"
+        }
        else if (player2Score.text! > player1Score.text! && player2Score.text! > player3Score.text! && player2Score.text! > player4Score.text!){
+        EndGameView.isHidden = false
+        WinnerLabel.text = "The winner is \(player2Name.text!)"
+        }
         
-        WinnerLabel.text = String(describing: player2Name)
-        }
        else if (player3Score.text! > player1Score.text! && player3Score.text! > player2Score.text! && player3Score.text! > player4Score.text!){
-        WinnerLabel.text = String(describing: player3Name)
+        EndGameView.isHidden = false
+        WinnerLabel.text = "The winner is \(player3Name.text!)"
         }
+        
        else if (player4Score.text! > player1Score.text! && player4Score.text! > player3Score.text! && player4Score.text! > player2Score.text!) {
-        WinnerLabel.text = String(describing: player4Name)
+        EndGameView.isHidden = false
+        WinnerLabel.text = "The winner is \(player4Name.text!)"
         }
         
         
