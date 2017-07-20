@@ -28,29 +28,23 @@ class GameViewController: UIViewController
     
     @IBOutlet var TurnShadow: [UIImageView]!
     
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet weak var Dice2: UIImageView!
+    
+   
+    
+    @IBAction func Attack_Clicked(_ sender: UIButton) {
+        Dice.isHidden = false
+        Dice2.isHidden = false
+        
+        
+        
+    }
+    @IBAction func EndAction(_ sender: UIButton) {
+        Dice.isHidden = true
+        Dice2.isHidden = true
+    }
+    
 
-    //Player 1
-    @IBOutlet weak var player1Image: UIImageView!
-    @IBOutlet weak var player1Name: UILabel!
-    @IBOutlet weak var player1Score: UILabel!
-    
-    //Player 2
-    @IBOutlet weak var player2Image: UIImageView!
-    @IBOutlet weak var player2Name: UILabel!
-    @IBOutlet weak var player2Score: UILabel!
-    
-    //Player 3
-    @IBOutlet weak var player3Image: UIImageView!
-    @IBOutlet weak var player3Name: UILabel!
-    @IBOutlet weak var player3Score: UILabel!
-    
-    //Player 4
-    @IBOutlet weak var player4Image: UIImageView!
-    @IBOutlet weak var player4Name: UILabel!
-    @IBOutlet weak var player4Score: UILabel!
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -87,21 +81,21 @@ class GameViewController: UIViewController
             i.isHidden = true
         }
         
-        player1Name.text = playerNames[0]
-        player1Score.text = String(players[0].score)
-        player1Image.image = UIImage(named: "alien\(imageList[0])")!
+       player1Name.text = playerNames[0]
+       player1Score.text = String(players[0].score)
+       player1Image.image = UIImage(named: "alien\(imageList[0])")!
         
-        player2Name.text = playerNames[1]
-        player2Score.text = String(players[1].score)
-        player2Image.image = UIImage(named: "alien\(imageList[1])")!
+       player2Name.text = playerNames[1]
+       player2Score.text = String(players[1].score)
+       player2Image.image = UIImage(named: "alien\(imageList[1])")!
 
-        player3Name.text = playerNames[2]
-        player3Score.text = String(players[2].score)
-        player3Image.image = UIImage(named: "alien\(imageList[2])")!
+       player3Name.text = playerNames[2]
+       player3Score.text = String(players[2].score)
+       player3Image.image = UIImage(named: "alien\(imageList[2])")!
 
-        player4Name.text = playerNames[3]
-        player4Score.text = String(players[3].score)
-        player4Image.image = UIImage(named: "alien\(imageList[3])")!
+       player4Name.text = playerNames[3]
+       player4Score.text = String(players[3].score)
+       player4Image.image = UIImage(named: "alien\(imageList[3])")!
 
     }
     
@@ -257,18 +251,30 @@ class GameViewController: UIViewController
         }
     }
 
+
+    //Dice.isHidden = true
+    
     @IBAction func DiceRoll(_ sender: UIButton) {
+        
+    
+        
         let Number = arc4random_uniform(5) + 1
         Dice.image = UIImage(named: "Dice\(Number)")
+       // Dice2.image = UIImage(named: "Dice2\(Number)")
         troopCountLabel.text = String(Number)
-        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+        let when = DispatchTime.now() + 1// change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when){
-            let Number2 = arc4random_uniform(5) + 1
-            self.Dice.image = UIImage(named: "Dice\(Number2)")
-            let totalTroops = Number + Number2
+            let totalTroops = Number
             self.numTroops = Int(totalTroops)
             self.troopCountLabel.text = String(totalTroops)
         }
+    }
+    @IBAction func reinforceClicked(_ sender: UIButton) {
+        //addButton.isHidden = false
+        //removeButton.isHidden = false
+    }
+    @IBAction func reinforceAddTroops(_ sender: UIButton){
+        addBool = true
     }
     
     // this ends the visible timer but doesn't change the turn
