@@ -234,6 +234,7 @@ class GameViewController: UIViewController
         
         if seconds == 0 {
             endButton()
+            // lol delete this line
         }
     }
 
