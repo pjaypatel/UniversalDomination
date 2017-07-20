@@ -21,7 +21,6 @@ class GameViewController: UIViewController
     var numTroops = 0
     var attackFlag = 0
     var addBool = true
-    var attackFlag = 0
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
