@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EzW-jc-0QP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EzW-jc-0QP">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -354,13 +354,10 @@
                                 <rect key="frame" x="5" y="212" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" backgroundImage="Fortify">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
                                 <connections>
                                     <action selector="FortifyDice:" destination="BV1-FR-VrT" eventType="touchUpInside" id="7ht-PA-wjK"/>
                                 </connections>
-                            </button>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSk-vO-BY8" userLabel="Attack">
                                 <rect key="frame" x="254" y="1" width="136" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -376,7 +373,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.81100196920000001" green="0.86099913039999998" blue="1" alpha="0.56901958630000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Player1Turn"/>
-                            </imageView>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LTI-FK-NdS">
                                 <rect key="frame" x="145" y="322" width="113" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -475,11 +472,9 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="Action" destination="PSU-pp-pNL" id="HTi-XA-x4r"/>
                         <outlet property="Dice" destination="kS0-iM-Cba" id="qbw-Ct-cCX"/>
                         <outlet property="Dice2" destination="eLj-Qo-AF3" id="4LA-VO-nq2"/>
                         <outlet property="countDownTimer" destination="KgG-By-iYp" id="mXj-tb-Pnc"/>
-                        <outlet property="troopCountLabel" destination="NKI-5i-IQd" id="GO8-5l-jd9"/>
                         <outletCollection property="PlanetButtons" destination="uGk-rs-H7U" collectionClass="NSMutableArray" id="d08-B9-4d7"/>
                         <outletCollection property="PlanetButtons" destination="set-JW-qGN" collectionClass="NSMutableArray" id="N5G-VR-rsA"/>
                         <outletCollection property="PlanetButtons" destination="VvX-Sm-ccI" collectionClass="NSMutableArray" id="gKR-Ml-Mcb"/>
@@ -490,7 +485,6 @@
                         <outletCollection property="PlanetButtons" destination="DFp-EL-bHv" collectionClass="NSMutableArray" id="zaY-OM-hNI"/>
                         <outletCollection property="PlanetButtons" destination="oKC-1u-p9j" collectionClass="NSMutableArray" id="Tj2-25-yyb"/>
                         <outletCollection property="PlanetButtons" destination="MnJ-c3-vC8" collectionClass="NSMutableArray" id="LMc-Ns-BDL"/>
-                        <outletCollection property="TurnShadow" destination="83A-rr-UN7" collectionClass="NSMutableArray" id="0D5-eV-wEd"/>
                         <outletCollection property="TurnShadow" destination="LTI-FK-NdS" collectionClass="NSMutableArray" id="VQo-Co-2QP"/>
                         <outletCollection property="TurnShadow" destination="H8M-uG-8Y1" collectionClass="NSMutableArray" id="7Au-ze-Y8w"/>
                         <outletCollection property="TurnShadow" destination="ZlV-Im-woy" collectionClass="NSMutableArray" id="qdu-oK-mbU"/>
@@ -596,8 +590,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Attack" width="1041" height="182"/>
         <image name="Dice1" width="99" height="98"/>
-        <image name="Fortify" width="1094" height="182"/>
         <image name="P1" width="648" height="648"/>
         <image name="P10" width="648" height="648"/>
         <image name="P2" width="648" height="648"/>
