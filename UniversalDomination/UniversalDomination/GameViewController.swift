@@ -81,21 +81,21 @@ class GameViewController: UIViewController
             i.isHidden = true
         }
         
-        player1Name.text = playerNames[0]
-        player1Score.text = String(players[0].score)
-        player1Image.image = UIImage(named: "alien\(imageList[0])")!
+       player1Name.text = playerNames[0]
+       player1Score.text = String(players[0].score)
+       player1Image.image = UIImage(named: "alien\(imageList[0])")!
         
-        player2Name.text = playerNames[1]
-        player2Score.text = String(players[1].score)
-        player2Image.image = UIImage(named: "alien\(imageList[1])")!
+       player2Name.text = playerNames[1]
+       player2Score.text = String(players[1].score)
+       player2Image.image = UIImage(named: "alien\(imageList[1])")!
 
-        player3Name.text = playerNames[2]
-        player3Score.text = String(players[2].score)
-        player3Image.image = UIImage(named: "alien\(imageList[2])")!
+       player3Name.text = playerNames[2]
+       player3Score.text = String(players[2].score)
+       player3Image.image = UIImage(named: "alien\(imageList[2])")!
 
-        player4Name.text = playerNames[3]
-        player4Score.text = String(players[3].score)
-        player4Image.image = UIImage(named: "alien\(imageList[3])")!
+       player4Name.text = playerNames[3]
+       player4Score.text = String(players[3].score)
+       player4Image.image = UIImage(named: "alien\(imageList[3])")!
 
     }
     
