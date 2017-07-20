@@ -19,6 +19,7 @@ class GameViewController: UIViewController
     var imageList:[Int] = [0,1,2,3]
     var playerNames: [String] = ["name", "name", "name", "name"]
     var numTroops = 0
+    var attackFlag = 0
     var addBool = true
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
@@ -112,7 +113,6 @@ class GameViewController: UIViewController
     
     // 0 == fortify, 1 == attack, 2 == reinforce
     var currentAction = 0
-    var initFort = true
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -123,7 +123,7 @@ class GameViewController: UIViewController
 
     func initFortify() {
         
-        startTimer(sec: 10) // <--- starts the timer for a turn
+        startButton() // <--- starts the timer for a turn
 
         TurnShadow[currentPlayer].isHidden = true
         currentPlayer = (currentPlayer+1) % 4
@@ -165,7 +165,7 @@ class GameViewController: UIViewController
                 currentAction = (currentAction+1) % 3
                 
                 print("fortify")
-                startTimer(sec: 10)
+                startButton()
                 Action.image = UIImage(named: "Fortify")
                 
                 // do any other preparation for fortify
@@ -175,7 +175,7 @@ class GameViewController: UIViewController
                 currentAction = (currentAction+1) % 3
                 
                 print("attack")
-                startTimer(sec: 10)
+                startButton()
                 Action.image = UIImage(named: "Attack")
                 
                 // do any other preparation for attack
@@ -186,58 +186,11 @@ class GameViewController: UIViewController
                 currentAction = (currentAction+1) % 3
                 
                 print("reinforce")
-                startTimer(sec: 10)
+                startButton()
                 Action.image = UIImage(named: "Reinforce")
                 
                 // do any other preparation for reinforce
             }
-        
-        }
-        
-        if initFort == true {
-            
-            initFortify()
-        }
-        else {
-            
-            // fortify
-            if currentAction == 0 {
-            
-                print("fortify")
-                
-                TurnShadow[currentPlayer].isHidden = true
-                currentPlayer = (currentPlayer+1)%4
-                
-                TurnShadow[currentPlayer].isHidden = false
-                
-                Action.image = UIImage(named: "Fortify")
-                startButton()
-                
-                // add any prep for fortify
-            
-            }
-            // attack
-            else if currentAction == 1 {
-            
-                print("attack")
-                
-                Action.image = UIImage(named: "Attack")
-                startButton()
-                
-                // add any prep for attack
-            }
-            // reinforce
-            else if currentAction == 2 {
-                
-                print("reinforce")
-                
-                Action.image = UIImage(named: "Reinforce")
-                startButton()
-                
-                // add any prep for reinforce
-            }
-            
-            currentAction = (currentAction+1)%3
         
         }
         
@@ -255,18 +208,26 @@ class GameViewController: UIViewController
         
         let button = sender as AnyObject
         
-        if (numTroops > 0 && addBool) {
-            planets[button.tag].addTroops(value: 1)
-            button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
-            numTroops -= 1
-            troopCountLabel.text = String(numTroops)
+        if (currentAction == 0) {
+            
+            players[currentPlayer].fortify(player: players[currentPlayer], planet: planets[button.tag], numTroops: &numTroops)
         }
-        else if (planets[button.tag].troops > 0 && !addBool) {
-            planets[button.tag].removeTroops(value: 1)
-            button.setTitle(String(planets[button.tag].getTroops()), for: UIControlState.normal)
-            numTroops += 1
-            troopCountLabel.text = String(numTroops)
+            
+        else if (currentAction == 1) {
+            
+            players[currentPlayer].attack(attacker: planets[button.tag], defender: planets[button.tag], whatToDo: &attackFlag)
+            
+            attackFlag += 1 % 3
+            
         }
+            
+        else if (currentAction == 2) {
+            
+            players[currentPlayer].reinforce(planet: planets[button.tag], numTroops: &numTroops, addBool: addBool)
+        }
+        
+        troopCountLabel.text = String(numTroops)
+    
     }
     
    
@@ -297,17 +258,17 @@ class GameViewController: UIViewController
     var timer = Timer()
     var timerIsOn = false
     
-    func startTimer(sec: Int)
+    func startButton()
     {
         //if timerIsOn == false {
-            seconds = sec
+            seconds = 10
             timerIsOn = true
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.updateTimer), userInfo: nil, repeats: true)
         //}
         
     }
    
-    func endTimer() {
+    func endButton() {
         //seconds = 0
         countDownTimer.text = "\(seconds)"
         timerIsOn = false
@@ -325,7 +286,7 @@ class GameViewController: UIViewController
         }
         
         if seconds == 0 {
-            endTimer()
+            endButton()
         }
     }
 
@@ -345,6 +306,6 @@ class GameViewController: UIViewController
     
     // this ends the visible timer but doesn't change the turn
     @IBAction func doneClicked(_ sender: Any) {
-        endTimer()
+        endButton()
     }
 }
