@@ -11,7 +11,7 @@ This game is similar to Risk, however on a much grander scale. Set in the future
 https://docs.google.com/spreadsheets/d/1wMbsKZSlMWOtPX20wXed_NS4fKez36S564wp7DTQSfQ/edit?usp=sharing
 
 # Product Backlog
-https://docs.google.com/spreadsheets/d/1pZzkpBEPnBKPistD4uoSouxyF2sZh-PTu50BPrZ86yE/edit#gid=0
+https://docs.google.com/spreadsheets/d/1pZzkpBEPnBKPistD4uoSouxyF2sZh-PTu50BPrZ86yE/edit?usp=sharing
 
 # Burndown Chart
 https://drive.google.com/open?id=0B9jST3m3ebRxbktDWnVwd3JTSXc
