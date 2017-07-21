@@ -20,7 +20,8 @@ class GameViewController: UIViewController
     var playerNames: [String] = ["name", "name", "name", "name"]
     var numTroops = 0
     var attackFlag = 0
-    var addBool = true
+    var addBool = false // this should be set to true, using false for debug
+    
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
@@ -31,7 +32,7 @@ class GameViewController: UIViewController
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var removeButton: UIButton!
-
+    
     //Player 1
     @IBOutlet weak var player1Image: UIImageView!
     @IBOutlet weak var player1Name: UILabel!
@@ -95,15 +96,15 @@ class GameViewController: UIViewController
         player2Name.text = playerNames[1]
         player2Score.text = String(players[1].score)
         player2Image.image = UIImage(named: "alien\(imageList[1])")!
-
+        
         player3Name.text = playerNames[2]
         player3Score.text = String(players[2].score)
         player3Image.image = UIImage(named: "alien\(imageList[2])")!
-
+        
         player4Name.text = playerNames[3]
         player4Score.text = String(players[3].score)
         player4Image.image = UIImage(named: "alien\(imageList[3])")!
-
+        
     }
     
     // timer to control the turns
@@ -117,14 +118,14 @@ class GameViewController: UIViewController
     override func viewDidAppear(_ animated: Bool) {
         
         // I can't find a better way of controlling the turns, we need to stop this after the initial round of fortify
-        GameTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(GameViewController.turn), userInfo: nil, repeats: true)
+        GameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(GameViewController.turn), userInfo: nil, repeats: true)
         
     }
-
+    
     func initFortify() {
         
         startButton() // <--- starts the timer for a turn
-
+        
         TurnShadow[currentPlayer].isHidden = true
         currentPlayer = (currentPlayer+1) % 4
         
@@ -133,10 +134,10 @@ class GameViewController: UIViewController
         // enable or disable buttons
         for i in planets
         {
-                if i.owner == nil
-                {
-                    // i.planetButton. <<-- do something with the planets without owners
-                }
+            if i.owner == nil
+            {
+                // i.planetButton. <<-- do something with the planets without owners
+            }
         }
         
         print("initfortify") //<<-- I was using this for debug
@@ -144,7 +145,7 @@ class GameViewController: UIViewController
         if currentPlayer == 3 {
             initFort = false
         }
-    
+        
     }
     
     func turn() {
@@ -162,67 +163,68 @@ class GameViewController: UIViewController
                 
                 TurnShadow[currentPlayer].isHidden = false
                 
-                currentAction = (currentAction+1) % 3
-                
-                print("fortify")
+
                 startButton()
                 Action.image = UIImage(named: "Fortify")
+                print("fortify and currentAction = \(currentAction)")
+                currentAction = (currentAction+1) % 3
+                
                 
                 // do any other preparation for fortify
             }
             else if currentAction == 1 {
                 
-                currentAction = (currentAction+1) % 3
                 
-                print("attack")
                 startButton()
                 Action.image = UIImage(named: "Attack")
+                print("attack and currentAction = \(currentAction)")
+                currentAction = (currentAction+1) % 3
                 
                 // do any other preparation for attack
-            
+                
             }
             else if currentAction == 2 {
                 
-                currentAction = (currentAction+1) % 3
                 
-                print("reinforce")
                 startButton()
                 Action.image = UIImage(named: "Reinforce")
+                print("reinforce and currentAction = \(currentAction)")
+                currentAction = (currentAction+1) % 3
                 
                 // do any other preparation for reinforce
             }
-        
+            
         }
         
-    
+        
     }
     
     
     //announce winner, end the game, and return to main menu
-
+    
     @IBOutlet weak var EndGameView: UIView!
     @IBOutlet weak var WinnerLabel: UILabel!
     @IBOutlet weak var Return: UIButton!
     func endGame()
     {
         
-       if player1Score.text! > player2Score.text! && player1Score.text! > player3Score.text! && player1Score.text! > player4Score.text! {
-          EndGameView.isHidden = false
-          WinnerLabel.text = "The winner is \(player1Name.text!)"
+        if player1Score.text! > player2Score.text! && player1Score.text! > player3Score.text! && player1Score.text! > player4Score.text! {
+            EndGameView.isHidden = false
+            WinnerLabel.text = "The winner is \(player1Name.text!)"
         }
-       else if (player2Score.text! > player1Score.text! && player2Score.text! > player3Score.text! && player2Score.text! > player4Score.text!){
-        EndGameView.isHidden = false
-        WinnerLabel.text = "The winner is \(player2Name.text!)"
+        else if (player2Score.text! > player1Score.text! && player2Score.text! > player3Score.text! && player2Score.text! > player4Score.text!){
+            EndGameView.isHidden = false
+            WinnerLabel.text = "The winner is \(player2Name.text!)"
         }
-        
-       else if (player3Score.text! > player1Score.text! && player3Score.text! > player2Score.text! && player3Score.text! > player4Score.text!){
-        EndGameView.isHidden = false
-        WinnerLabel.text = "The winner is \(player3Name.text!)"
+            
+        else if (player3Score.text! > player1Score.text! && player3Score.text! > player2Score.text! && player3Score.text! > player4Score.text!){
+            EndGameView.isHidden = false
+            WinnerLabel.text = "The winner is \(player3Name.text!)"
         }
-        
-       else if (player4Score.text! > player1Score.text! && player4Score.text! > player3Score.text! && player4Score.text! > player2Score.text!) {
-        EndGameView.isHidden = false
-        WinnerLabel.text = "The winner is \(player4Name.text!)"
+            
+        else if (player4Score.text! > player1Score.text! && player4Score.text! > player3Score.text! && player4Score.text! > player2Score.text!) {
+            EndGameView.isHidden = false
+            WinnerLabel.text = "The winner is \(player4Name.text!)"
         }
         
         
@@ -234,20 +236,22 @@ class GameViewController: UIViewController
         let button = sender as AnyObject
         
         if (currentAction == 0) {
+            print("fortify commenced")
             players[currentPlayer].fortify(player: players[currentPlayer], planet: planets[button.tag], numTroops: &numTroops)
         }
         else if (currentAction == 1) {
+            print("attack commenced, player: \(currentPlayer + 1)")
             players[currentPlayer].attack(attacker: planets[button.tag], defender: planets[button.tag], whatToDo: &attackFlag)
-            attackFlag += 1 % 3
         }
         else if (currentAction == 2) {
+            print("reinforce commenced")
             players[currentPlayer].reinforce(planet: planets[button.tag], numTroops: &numTroops, addBool: addBool)
         }
         
         troopCountLabel.text = String(numTroops)
     }
     
-   
+    
     
     override var shouldAutorotate: Bool {
         return true
@@ -268,30 +272,30 @@ class GameViewController: UIViewController
         return true
     }
     
-
+    
     @IBOutlet weak internal var countDownTimer: UILabel!
     
-    var seconds = 15
+    var seconds = 5
     var timer = Timer()
     var timerIsOn = false
     
     func startButton()
     {
         //if timerIsOn == false {
-            seconds = 15
-            timerIsOn = true
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.updateTimer), userInfo: nil, repeats: true)
+        seconds = 5
+        timerIsOn = true
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.updateTimer), userInfo: nil, repeats: true)
         //}
         
     }
-   
+    
     func endButton() {
         //seconds = 0
         countDownTimer.text = "\(seconds)"
         timerIsOn = false
         timer.invalidate()
     }
-
+    
     func updateTimer() {
         
         //print(seconds) //<-- I was using this for debug
@@ -306,12 +310,12 @@ class GameViewController: UIViewController
             endButton()
         }
     }
-
+    
     @IBAction func DiceRoll(_ sender: UIButton) {
         let Number = arc4random_uniform(5) + 1
         Dice.image = UIImage(named: "Dice\(Number)")
         troopCountLabel.text = String(Number)
-        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+        let when = DispatchTime.now() + 0.5 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when){
             let Number2 = arc4random_uniform(5) + 1
             self.Dice.image = UIImage(named: "Dice\(Number2)")

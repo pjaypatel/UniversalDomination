@@ -521,6 +521,7 @@
         <!--Settings View Controller-->
         <scene sceneID="pUB-Yh-KCY">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKC-vf-ec5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="PGQ-UX-wCF" userLabel="Settings View Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bvn-WI-VoS"/>
@@ -552,7 +553,6 @@
                         <color key="backgroundColor" red="0.56236232740000003" green="0.97017198579999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FKC-vf-ec5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="99" y="641"/>
         </scene>
@@ -611,20 +611,6 @@
             </objects>
             <point key="canvasLocation" x="99.400299850074973" y="-626.39999999999998"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tXh-dL-iws">
-            <objects>
-                <viewController id="HI5-ki-mh7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bLt-Oc-sXF">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qeF-2d-Qql" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="17" y="47"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Dice1" width="99" height="98"/>
@@ -649,6 +635,6 @@
         <image name="ufo" width="1920" height="999"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xj0-Sq-Of3"/>
+        <segue reference="F2t-2l-Uk2"/>
     </inferredMetricsTieBreakers>
 </document>
