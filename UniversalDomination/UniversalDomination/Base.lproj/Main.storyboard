@@ -426,17 +426,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwf-xC-iIe">
-                                <rect key="frame" x="293" y="163" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1874159574508667" green="0.58176517486572266" blue="0.9350312352180481" alpha="0.75254173801369861" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="DONE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ndv-VO-w9F"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Fortify" translatesAutoresizingMaskIntoConstraints="NO" id="PSU-pp-pNL">
                                 <rect key="frame" x="239" y="118" width="188" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -473,13 +462,28 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTt-kt-Fkc">
+                                <rect key="frame" x="295" y="157" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="setAddBoolTrue:" destination="BV1-FR-VrT" eventType="touchUpInside" id="hfm-a6-eNY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEX-8M-RhQ">
+                                <rect key="frame" x="333" y="156" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Remove"/>
+                                <connections>
+                                    <action selector="setAddBoolFalse:" destination="BV1-FR-VrT" eventType="touchUpInside" id="oYD-de-Xrr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="Action" destination="PSU-pp-pNL" id="HTi-XA-x4r"/>
                         <outlet property="Dice" destination="kS0-iM-Cba" id="qbw-Ct-cCX"/>
-                        <outlet property="DoneButton" destination="lwf-xC-iIe" id="dQw-b6-EzL"/>
                         <outlet property="EndGameView" destination="WoD-u6-Fan" id="uIU-Vd-ZVN"/>
                         <outlet property="Return" destination="qtN-rQ-iLU" id="MNx-XM-LuD"/>
                         <outlet property="WinnerLabel" destination="LvX-B2-odG" id="8AU-Jt-gyO"/>
@@ -496,6 +500,8 @@
                         <outlet property="player4Image" destination="7SB-5H-3nl" id="Z6v-ns-D1t"/>
                         <outlet property="player4Name" destination="IvI-Wb-kac" id="Uh4-DJ-JMS"/>
                         <outlet property="player4Score" destination="luo-wt-hQ6" id="gx0-ni-fRI"/>
+                        <outlet property="reinforceAddButton" destination="MTt-kt-Fkc" id="VfC-Ml-rtN"/>
+                        <outlet property="reinforceRemoveButton" destination="wEX-8M-RhQ" id="pNh-AZ-q32"/>
                         <outlet property="troopCountLabel" destination="NKI-5i-IQd" id="GO8-5l-jd9"/>
                         <outletCollection property="PlanetButtons" destination="uGk-rs-H7U" collectionClass="NSMutableArray" id="d08-B9-4d7"/>
                         <outletCollection property="PlanetButtons" destination="set-JW-qGN" collectionClass="NSMutableArray" id="N5G-VR-rsA"/>
@@ -521,7 +527,6 @@
         <!--Settings View Controller-->
         <scene sceneID="pUB-Yh-KCY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FKC-vf-ec5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="PGQ-UX-wCF" userLabel="Settings View Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bvn-WI-VoS"/>
@@ -553,6 +558,7 @@
                         <color key="backgroundColor" red="0.56236232740000003" green="0.97017198579999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKC-vf-ec5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="99" y="641"/>
         </scene>
@@ -635,6 +641,6 @@
         <image name="ufo" width="1920" height="999"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F2t-2l-Uk2"/>
+        <segue reference="xj0-Sq-Of3"/>
     </inferredMetricsTieBreakers>
 </document>

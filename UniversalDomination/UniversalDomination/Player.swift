@@ -15,7 +15,6 @@ class Player
     var victim: Planet?
     var myAttacker: Planet?
     
-    
     init(name: String)
     {
         self.name = name
@@ -26,6 +25,7 @@ class Player
     func fortify(player: Player, planet: Planet, numTroops: inout Int)
     {
         if(numTroops > 0 && (planet.owner == nil || planet.owner!.name == self.name)) {
+            score += (planet.owner == nil ? 1:0)
             planet.owner = self
             planet.addTroops(value: 1)
             numTroops -= 1
@@ -34,14 +34,17 @@ class Player
     
     func attack(attacker: Planet, defender: Planet, whatToDo: inout Int)
     {
-        if(attacker.owner == nil || defender.owner == nil) {
+        print("attack method in player class REACHED")
+        if((attacker.owner == nil  && whatToDo == 0) || (defender.owner == nil && whatToDo == 1)) {
             return
         }
-        if(whatToDo == 0 && attacker.owner?.name == self.name && defender.owner?.name != self.name) {
+        if(whatToDo == 0 && attacker.owner?.name == self.name) {
+            print("Attacker set")
             myAttacker = attacker
             whatToDo = (whatToDo + 1) % 2
         }
-        else if (whatToDo == 1) {
+        else if (whatToDo == 1 && defender.owner?.name != self.name) {
+            print("Defender set")
             victim = defender
             makeAttack()
             whatToDo = (whatToDo + 1) % 2
@@ -50,18 +53,27 @@ class Player
     
     func makeAttack() {
         if((myAttacker?.getTroops())! > (victim?.getTroops())!) {
+            print("ATTACKING")
             let attackerDice = arc4random_uniform(5) + arc4random_uniform(5) + 2
             let defenderDice = arc4random_uniform(5) + 1
             if(attackerDice > defenderDice) {
+                print("attackerDice > defenderDice")
                 victim?.removeTroops(value: (victim?.getTroops())!)
                 victim?.addTroops(value: ((myAttacker?.troops)! / 2))
-                myAttacker?.troops -= ((myAttacker?.troops)! / 2)
+                myAttacker?.removeTroops(value: (myAttacker?.troops)! / 2)
+                victim?.owner = self
+                score += 1
             }
             else if(defenderDice > attackerDice) {
                 myAttacker?.removeTroops(value: (myAttacker?.getTroops())!)
+                print("removed \((myAttacker?.getTroops())!)")
                 myAttacker?.addTroops(value: ((victim?.troops)! / 2))
-                victim?.troops -= ((victim?.troops)! / 2)
+                victim?.removeTroops(value: (victim?.troops)! / 2)
+                myAttacker?.owner = victim?.owner
             }
+        }
+        else {
+            print("attacking risky!")
         }
     }
     
@@ -78,6 +90,7 @@ class Player
         else if (planet.owner?.name == self.name && !addBool && planet.troops > 0) {
             planet.removeTroops(value: 1)
             numTroops += 1
+            score -= (planet.getTroops() == 0 ? 1:0)
         }
     }
 
