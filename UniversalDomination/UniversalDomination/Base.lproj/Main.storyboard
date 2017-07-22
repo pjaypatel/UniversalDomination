@@ -298,14 +298,6 @@
                                 <rect key="frame" x="8" y="241" width="55" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4B-GL-UDm">
-                                <rect key="frame" x="5" y="287" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dice Roll"/>
-                                <connections>
-                                    <action selector="DiceRoll:" destination="BV1-FR-VrT" eventType="touchUpInside" id="o4m-pe-ms3"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5u-aA-vfl" userLabel="Home">
                                 <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -426,17 +418,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwf-xC-iIe">
-                                <rect key="frame" x="293" y="163" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1874159574508667" green="0.58176517486572266" blue="0.9350312352180481" alpha="0.75254173801369861" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="DONE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ndv-VO-w9F"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Fortify" translatesAutoresizingMaskIntoConstraints="NO" id="PSU-pp-pNL">
                                 <rect key="frame" x="239" y="118" width="188" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -473,13 +454,28 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTt-kt-Fkc">
+                                <rect key="frame" x="295" y="157" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="setAddBoolTrue:" destination="BV1-FR-VrT" eventType="touchUpInside" id="hfm-a6-eNY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEX-8M-RhQ">
+                                <rect key="frame" x="333" y="156" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Remove"/>
+                                <connections>
+                                    <action selector="setAddBoolFalse:" destination="BV1-FR-VrT" eventType="touchUpInside" id="oYD-de-Xrr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="Action" destination="PSU-pp-pNL" id="HTi-XA-x4r"/>
                         <outlet property="Dice" destination="kS0-iM-Cba" id="qbw-Ct-cCX"/>
-                        <outlet property="DoneButton" destination="lwf-xC-iIe" id="dQw-b6-EzL"/>
                         <outlet property="EndGameView" destination="WoD-u6-Fan" id="uIU-Vd-ZVN"/>
                         <outlet property="Return" destination="qtN-rQ-iLU" id="MNx-XM-LuD"/>
                         <outlet property="WinnerLabel" destination="LvX-B2-odG" id="8AU-Jt-gyO"/>
@@ -496,6 +492,8 @@
                         <outlet property="player4Image" destination="7SB-5H-3nl" id="Z6v-ns-D1t"/>
                         <outlet property="player4Name" destination="IvI-Wb-kac" id="Uh4-DJ-JMS"/>
                         <outlet property="player4Score" destination="luo-wt-hQ6" id="gx0-ni-fRI"/>
+                        <outlet property="reinforceAddButton" destination="MTt-kt-Fkc" id="VfC-Ml-rtN"/>
+                        <outlet property="reinforceRemoveButton" destination="wEX-8M-RhQ" id="pNh-AZ-q32"/>
                         <outlet property="troopCountLabel" destination="NKI-5i-IQd" id="GO8-5l-jd9"/>
                         <outletCollection property="PlanetButtons" destination="uGk-rs-H7U" collectionClass="NSMutableArray" id="d08-B9-4d7"/>
                         <outletCollection property="PlanetButtons" destination="set-JW-qGN" collectionClass="NSMutableArray" id="N5G-VR-rsA"/>
@@ -610,20 +608,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8v-bA-f2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="99.400299850074973" y="-626.39999999999998"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tXh-dL-iws">
-            <objects>
-                <viewController id="HI5-ki-mh7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bLt-Oc-sXF">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qeF-2d-Qql" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="17" y="47"/>
         </scene>
     </scenes>
     <resources>

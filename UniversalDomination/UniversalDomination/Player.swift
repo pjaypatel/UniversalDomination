@@ -15,7 +15,6 @@ class Player
     var victim: Planet?
     var myAttacker: Planet?
     
-    
     init(name: String)
     {
         self.name = name
@@ -26,7 +25,8 @@ class Player
     func fortify(player: Player, planet: Planet, numTroops: inout Int)
     {
         if(numTroops > 0 && (planet.owner == nil || planet.owner!.name == self.name)) {
-            planet.owner = player
+            score += (planet.owner == nil ? 1:0)
+            planet.owner = self
             planet.addTroops(value: 1)
             numTroops -= 1
         }
@@ -34,43 +34,79 @@ class Player
     
     func attack(attacker: Planet, defender: Planet, whatToDo: inout Int)
     {
-        if(whatToDo == 0) {
+        if((attacker.owner == nil  && whatToDo == 0) || (defender.owner == nil && whatToDo == 1)) {
+            return
+        }
+        if(whatToDo == 0 && attacker.owner?.name == self.name) {
             myAttacker = attacker
+            whatToDo = (whatToDo + 1) % 2
         }
-        else if (whatToDo == 1) {
+        else if (whatToDo == 1 && defender.owner?.name != self.name) {
             victim = defender
-        }
-        else if(whatToDo == 2) {
             makeAttack()
+            whatToDo = (whatToDo + 1) % 2
         }
     }
     
     func makeAttack() {
-        if((myAttacker?.troops)! > (victim?.troops)!) {
+        if((myAttacker?.getTroops())! > (victim?.getTroops())!) {
             let attackerDice = arc4random_uniform(5) + arc4random_uniform(5) + 2
             let defenderDice = arc4random_uniform(5) + 1
             if(attackerDice > defenderDice) {
                 victim?.removeTroops(value: (victim?.getTroops())!)
                 victim?.addTroops(value: ((myAttacker?.troops)! / 2))
-                myAttacker?.troops -= ((myAttacker?.troops)! / 2)
+                myAttacker?.removeTroops(value: (myAttacker?.troops)! / 2)
+                victim?.owner = self
+                score += 1
+                victim?.owner?.score -= 1
             }
             else if(defenderDice > attackerDice) {
                 myAttacker?.removeTroops(value: (myAttacker?.getTroops())!)
                 myAttacker?.addTroops(value: ((victim?.troops)! / 2))
-                victim?.troops -= ((victim?.troops)! / 2)
+                victim?.removeTroops(value: (victim?.troops)! / 2)
+                myAttacker?.owner = victim?.owner
+                score -= 1
+                victim?.owner?.score += 1
             }
+            
+        }
+        else {
+            let attackerDice = arc4random_uniform(5) + 1
+            let defenderDice = arc4random_uniform(5) + arc4random_uniform(5) + 2
+            if(attackerDice > defenderDice) {
+                victim?.removeTroops(value: (victim?.getTroops())!)
+                victim?.addTroops(value: ((myAttacker?.troops)! / 2))
+                myAttacker?.removeTroops(value: (myAttacker?.troops)! / 2)
+                victim?.owner = self
+                score += 1
+                victim?.owner?.score -= 1
+            }
+            else if(defenderDice > attackerDice) {
+                myAttacker?.removeTroops(value: (myAttacker?.getTroops())!)
+                myAttacker?.addTroops(value: ((victim?.troops)! / 2))
+                victim?.removeTroops(value: (victim?.troops)! / 2)
+                myAttacker?.owner = victim?.owner
+                score -= 1
+                victim?.owner?.score += 1
+            }
+            
         }
     }
     
     func reinforce(planet: Planet, numTroops: inout Int, addBool: Bool)
     {
         if(numTroops > 0 && addBool) {
+            if(planet.getTroops() == 0) {
+                planet.owner = self
+            }
             planet.addTroops(value: 1)
             numTroops -= 1
+            
         }
-        else if (!addBool) {
+        else if (planet.owner?.name == self.name && !addBool && planet.troops > 0) {
             planet.removeTroops(value: 1)
             numTroops += 1
+            score -= (planet.getTroops() == 0 ? 1:0)
         }
     }
 
