@@ -298,14 +298,6 @@
                                 <rect key="frame" x="8" y="241" width="55" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4B-GL-UDm">
-                                <rect key="frame" x="5" y="287" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dice Roll"/>
-                                <connections>
-                                    <action selector="DiceRoll:" destination="BV1-FR-VrT" eventType="touchUpInside" id="o4m-pe-ms3"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5u-aA-vfl" userLabel="Home">
                                 <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

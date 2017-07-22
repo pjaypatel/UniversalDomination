@@ -34,17 +34,14 @@ class Player
     
     func attack(attacker: Planet, defender: Planet, whatToDo: inout Int)
     {
-        print("attack method in player class REACHED")
         if((attacker.owner == nil  && whatToDo == 0) || (defender.owner == nil && whatToDo == 1)) {
             return
         }
         if(whatToDo == 0 && attacker.owner?.name == self.name) {
-            print("Attacker set")
             myAttacker = attacker
             whatToDo = (whatToDo + 1) % 2
         }
         else if (whatToDo == 1 && defender.owner?.name != self.name) {
-            print("Defender set")
             victim = defender
             makeAttack()
             whatToDo = (whatToDo + 1) % 2
@@ -53,27 +50,46 @@ class Player
     
     func makeAttack() {
         if((myAttacker?.getTroops())! > (victim?.getTroops())!) {
-            print("ATTACKING")
             let attackerDice = arc4random_uniform(5) + arc4random_uniform(5) + 2
             let defenderDice = arc4random_uniform(5) + 1
             if(attackerDice > defenderDice) {
-                print("attackerDice > defenderDice")
                 victim?.removeTroops(value: (victim?.getTroops())!)
                 victim?.addTroops(value: ((myAttacker?.troops)! / 2))
                 myAttacker?.removeTroops(value: (myAttacker?.troops)! / 2)
                 victim?.owner = self
                 score += 1
+                victim?.owner?.score -= 1
             }
             else if(defenderDice > attackerDice) {
                 myAttacker?.removeTroops(value: (myAttacker?.getTroops())!)
-                print("removed \((myAttacker?.getTroops())!)")
                 myAttacker?.addTroops(value: ((victim?.troops)! / 2))
                 victim?.removeTroops(value: (victim?.troops)! / 2)
                 myAttacker?.owner = victim?.owner
+                score -= 1
+                victim?.owner?.score += 1
             }
+            
         }
         else {
-            print("attacking risky!")
+            let attackerDice = arc4random_uniform(5) + 1
+            let defenderDice = arc4random_uniform(5) + arc4random_uniform(5) + 2
+            if(attackerDice > defenderDice) {
+                victim?.removeTroops(value: (victim?.getTroops())!)
+                victim?.addTroops(value: ((myAttacker?.troops)! / 2))
+                myAttacker?.removeTroops(value: (myAttacker?.troops)! / 2)
+                victim?.owner = self
+                score += 1
+                victim?.owner?.score -= 1
+            }
+            else if(defenderDice > attackerDice) {
+                myAttacker?.removeTroops(value: (myAttacker?.getTroops())!)
+                myAttacker?.addTroops(value: ((victim?.troops)! / 2))
+                victim?.removeTroops(value: (victim?.troops)! / 2)
+                myAttacker?.owner = victim?.owner
+                score -= 1
+                victim?.owner?.score += 1
+            }
+            
         }
     }
     

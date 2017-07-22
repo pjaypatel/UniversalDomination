@@ -118,7 +118,7 @@ class GameViewController: UIViewController
     var initFort = true
     
     // 0 == fortify, 1 == attack, 2 == reinforce
-    var currentAction = 0
+    var currentAction = -1
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -135,6 +135,8 @@ class GameViewController: UIViewController
         
         TurnShadow[currentPlayer].isHidden = false
         
+        DiceRoll()
+        
         if currentPlayer == 3 {
             initFort = false
         }
@@ -148,6 +150,8 @@ class GameViewController: UIViewController
         }
         else {
             // fortify
+            currentAction = (currentAction + 1) % 3
+
             if currentAction == 0 {
                 addBool = true
                 TurnShadow[currentPlayer].isHidden = true
@@ -155,6 +159,7 @@ class GameViewController: UIViewController
                 TurnShadow[currentPlayer].isHidden = false
                 startButton()
                 Action.image = UIImage(named: "Fortify")
+                DiceRoll()
                 print("fortify and currentAction = \(currentAction)")
                 // do any other preparation for fortify
             }
@@ -174,7 +179,10 @@ class GameViewController: UIViewController
                 print("reinforce and currentAction = \(currentAction)")
                 // do any other preparation for reinforce
             }
+//            currentAction = (currentAction + 1) % 3
+
         }
+        numTroops = 0
     }
     
     
@@ -213,7 +221,7 @@ class GameViewController: UIViewController
         
         let button = sender as AnyObject
         
-        if (currentAction == 0) {
+        if (currentAction == 0 || currentAction == -1) {
             attackFlag = 0
             print("fortifying")
             players[currentPlayer].fortify(player: players[currentPlayer], planet: planets[button.tag], numTroops: &numTroops)
@@ -271,6 +279,14 @@ class GameViewController: UIViewController
     func startButton()
     {
         //if timerIsOn == false {
+        if(currentAction == 2) {
+            reinforceRemoveButton.isHidden = false
+            reinforceAddButton.isHidden = false
+        }
+        else {
+            reinforceAddButton.isHidden = true
+            reinforceRemoveButton.isHidden = true
+        }
         seconds = 15
         timerIsOn = true
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.updateTimer), userInfo: nil, repeats: true)
@@ -285,7 +301,7 @@ class GameViewController: UIViewController
         // stops the timer from going negative
         if timerIsOn == true {
             seconds -= 1
-//            countDownTimer.text = "\(seconds)"
+            countDownTimer.text = "\(seconds)"
         }
         
         if seconds == 0 {
@@ -298,12 +314,10 @@ class GameViewController: UIViewController
         countDownTimer.text = "\(seconds)"
         timerIsOn = false
         timer.invalidate()
-        if (!initFort) {
-            currentAction = (currentAction + 1) % 3
-        }
+
     }
     
-    @IBAction func DiceRoll(_ sender: UIButton) {
+    func DiceRoll() {
         let Number = arc4random_uniform(5) + 1
         Dice.image = UIImage(named: "Dice\(Number)")
         troopCountLabel.text = String(Number)
