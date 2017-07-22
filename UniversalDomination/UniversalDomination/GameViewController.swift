@@ -52,6 +52,8 @@ class GameViewController: UIViewController
     @IBOutlet weak var player4Name: UILabel!
     @IBOutlet weak var player4Score: UILabel!
     
+    @IBOutlet weak var startGame: UILabel!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -114,6 +116,9 @@ class GameViewController: UIViewController
     // 0 == fortify, 1 == attack, 2 == reinforce
     var currentAction = 0
     
+    var numTurns = 0
+    let totalTurns = 25 // make it a multiple of 12 + 1
+    
     override func viewDidAppear(_ animated: Bool) {
         
         // controls the start of the game and the initial round of fortify
@@ -149,10 +154,20 @@ class GameViewController: UIViewController
     
     func turn() {
         
+        startGame.isHidden = true
+        
         if initFort == true {
             initFortify()
         }
         else {
+            
+            numTurns += 1
+            
+            if numTurns == totalTurns {
+                GameTimer.invalidate()
+                endGame()
+            }
+
             
             // fortify
             if currentAction == 0 {
@@ -191,7 +206,7 @@ class GameViewController: UIViewController
                 
                 // do any other preparation for reinforce
             }
-        
+            
         }
         
     
@@ -201,6 +216,8 @@ class GameViewController: UIViewController
     func endGame()
     {
         // announce winner, end the game, and return to main menu
+        
+        print("endGame")
     }
     
     
