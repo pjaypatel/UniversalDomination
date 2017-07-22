@@ -53,20 +53,22 @@ class Player
             let attackerDice = arc4random_uniform(5) + arc4random_uniform(5) + 2
             let defenderDice = arc4random_uniform(5) + 1
             if(attackerDice > defenderDice) {
+                self.score += 1
+                victim?.owner?.score -= 1
                 victim?.removeTroops(value: (victim?.getTroops())!)
                 victim?.addTroops(value: ((myAttacker?.troops)! / 2))
                 myAttacker?.removeTroops(value: (myAttacker?.troops)! / 2)
                 victim?.owner = self
-                score += 1
-                victim?.owner?.score -= 1
+                
             }
             else if(defenderDice > attackerDice) {
+                score -= 1
+                victim?.owner?.score += 1
                 myAttacker?.removeTroops(value: (myAttacker?.getTroops())!)
                 myAttacker?.addTroops(value: ((victim?.troops)! / 2))
                 victim?.removeTroops(value: (victim?.troops)! / 2)
                 myAttacker?.owner = victim?.owner
-                score -= 1
-                victim?.owner?.score += 1
+                
             }
             
         }
@@ -74,20 +76,22 @@ class Player
             let attackerDice = arc4random_uniform(5) + 1
             let defenderDice = arc4random_uniform(5) + arc4random_uniform(5) + 2
             if(attackerDice > defenderDice) {
+                self.score += 1
+                victim?.owner?.score -= 1
                 victim?.removeTroops(value: (victim?.getTroops())!)
                 victim?.addTroops(value: ((myAttacker?.troops)! / 2))
                 myAttacker?.removeTroops(value: (myAttacker?.troops)! / 2)
                 victim?.owner = self
-                score += 1
-                victim?.owner?.score -= 1
+                
             }
             else if(defenderDice > attackerDice) {
+                self.score -= 1
+                victim?.owner?.score += 1
                 myAttacker?.removeTroops(value: (myAttacker?.getTroops())!)
                 myAttacker?.addTroops(value: ((victim?.troops)! / 2))
                 victim?.removeTroops(value: (victim?.troops)! / 2)
                 myAttacker?.owner = victim?.owner
-                score -= 1
-                victim?.owner?.score += 1
+                
             }
             
         }
