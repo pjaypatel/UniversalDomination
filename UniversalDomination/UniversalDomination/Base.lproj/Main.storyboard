@@ -432,6 +432,14 @@
                                     <action selector="buttonClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="7W4-KF-ZfR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Game will start soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiT-mU-Wg3">
+                                <rect key="frame" x="205" y="105" width="256" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.32378489560000001" green="0.49065276349999998" blue="0.69557561530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WoD-u6-Fan">
                                 <rect key="frame" x="283" y="20" width="122" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -494,6 +502,7 @@
                         <outlet property="player4Score" destination="luo-wt-hQ6" id="gx0-ni-fRI"/>
                         <outlet property="reinforceAddButton" destination="MTt-kt-Fkc" id="VfC-Ml-rtN"/>
                         <outlet property="reinforceRemoveButton" destination="wEX-8M-RhQ" id="pNh-AZ-q32"/>
+                        <outlet property="startGame" destination="IiT-mU-Wg3" id="lmo-2u-Ijd"/>
                         <outlet property="troopCountLabel" destination="NKI-5i-IQd" id="GO8-5l-jd9"/>
                         <outletCollection property="PlanetButtons" destination="uGk-rs-H7U" collectionClass="NSMutableArray" id="d08-B9-4d7"/>
                         <outletCollection property="PlanetButtons" destination="set-JW-qGN" collectionClass="NSMutableArray" id="N5G-VR-rsA"/>

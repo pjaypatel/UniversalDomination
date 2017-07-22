@@ -22,6 +22,7 @@ class GameViewController: UIViewController
     var attackFlag = 0
     var addBool = false // this should be set to true, using false for debug
     
+    @IBOutlet weak var startGame: UILabel!
     @IBOutlet var PlanetButtons: [UIButton]!
     @IBOutlet weak var Dice: UIImageView!
     @IBOutlet weak var troopCountLabel: UILabel!
@@ -120,6 +121,9 @@ class GameViewController: UIViewController
     // 0 == fortify, 1 == attack, 2 == reinforce
     var currentAction = -1
     
+    var numTurns = 0
+    let totalTurns = 25 // make it a multiple of 12 + 1
+    
     override func viewDidAppear(_ animated: Bool) {
         
         // I can't find a better way of controlling the turns, we need to stop this after the initial round of fortify
@@ -145,13 +149,24 @@ class GameViewController: UIViewController
     
     func turn() {
         
+        startGame.isHidden = true
+        
         if initFort == true {
             initFortify()
         }
         else {
             // fortify
+            
+            numTurns += 1
+            
+            if numTurns == totalTurns {
+                GameTimer.invalidate()
+                endGame()
+            }
+            
             currentAction = (currentAction + 1) % 3
-
+            
+            // fortify
             if currentAction == 0 {
                 addBool = true
                 TurnShadow[currentPlayer].isHidden = true
