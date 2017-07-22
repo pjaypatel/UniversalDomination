@@ -156,9 +156,6 @@ class GameViewController: UIViewController
                 startButton()
                 Action.image = UIImage(named: "Fortify")
                 print("fortify and currentAction = \(currentAction)")
-                currentAction = (currentAction+1) % 3
-                
-                
                 // do any other preparation for fortify
             }
             // attack
@@ -166,8 +163,6 @@ class GameViewController: UIViewController
                 startButton()
                 Action.image = UIImage(named: "Attack")
                 print("attack and currentAction = \(currentAction)")
-                currentAction = (currentAction+1) % 3
-                
                 // do any other preparation for attack
             }
             // reinforce
@@ -177,8 +172,6 @@ class GameViewController: UIViewController
                 reinforceAddButton.isHidden = false
                 reinforceRemoveButton.isHidden = false
                 print("reinforce and currentAction = \(currentAction)")
-                currentAction = (currentAction+1) % 3
-                
                 // do any other preparation for reinforce
             }
         }
@@ -292,7 +285,7 @@ class GameViewController: UIViewController
         // stops the timer from going negative
         if timerIsOn == true {
             seconds -= 1
-            countDownTimer.text = "\(seconds)"
+//            countDownTimer.text = "\(seconds)"
         }
         
         if seconds == 0 {
@@ -305,9 +298,8 @@ class GameViewController: UIViewController
         countDownTimer.text = "\(seconds)"
         timerIsOn = false
         timer.invalidate()
-        
         if (!initFort) {
-            currentAction = (currentAction+1) % 3
+            currentAction = (currentAction + 1) % 3
         }
     }
     
