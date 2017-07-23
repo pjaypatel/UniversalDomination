@@ -84,7 +84,7 @@ class GameViewController: UIViewController
             if playerNames[index].isEmpty {
                 playerNames[index] = "Player\(index + 1):"
             }
-            players.append(Player(name: playerNames[index]))
+            players.append(Player(name: playerNames[index], tag: index))
         }
         
         for i in TurnShadow
@@ -161,6 +161,7 @@ class GameViewController: UIViewController
             
             if numTurns == totalTurns {
                 GameTimer.invalidate()
+                print("endgame")
                 endGame()
             }
             
@@ -239,7 +240,7 @@ class GameViewController: UIViewController
         if (currentAction == 0 || currentAction == -1) {
             attackFlag = 0
             print("fortifying")
-            players[currentPlayer].fortify(player: players[currentPlayer], planet: planets[button.tag], numTroops: &numTroops)
+            players[currentPlayer].fortify(tag: currentPlayer, player: players[currentPlayer], planet: planets[button.tag], numTroops: &numTroops)
         }
         else if (currentAction == 1) {
             print("attack commenced, player: \(currentPlayer + 1)")
@@ -346,8 +347,8 @@ class GameViewController: UIViewController
         }
     }
     
-    // this ends the visible timer but doesn't change the turn
+    /*// this ends the visible timer but doesn't change the turn
     @IBAction func doneClicked(_ sender: Any) {
         endButton()
-    }
+    }*/
 }
