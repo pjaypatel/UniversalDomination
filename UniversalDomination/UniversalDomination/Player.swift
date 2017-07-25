@@ -75,7 +75,6 @@ class Player
                 victim?.removeTroops(value: (victim?.troops)! / 2)
                 myAttacker?.owner = victim?.owner
                 changePic(planet: myAttacker!, player: (victim?.owner?.tag)!)
-                
             }
             
         }
@@ -99,9 +98,7 @@ class Player
                 victim?.removeTroops(value: (victim?.troops)! / 2)
                 myAttacker?.owner = victim?.owner
                 changePic(planet: myAttacker!, player: (victim?.owner?.tag)!)
-                
             }
-            
         }
     }
     
@@ -111,15 +108,20 @@ class Player
             if(planet.getTroops() == 0) {
                 planet.owner = self
                 changePic(planet: planet, player: self.tag)
+                score += 1
             }
             planet.addTroops(value: 1)
             numTroops -= 1
-            
         }
         else if (planet.owner?.name == self.name && !addBool && planet.troops > 0) {
+            if(planet.getTroops() == 1)
+            {
+                planet.owner = nil
+                score -= 1
+                changePic(planet: planet, player: 4)
+            }
             planet.removeTroops(value: 1)
             numTroops += 1
-            score -= (planet.getTroops() == 0 ? 1:0)
         }
     }
     
@@ -266,6 +268,9 @@ class Player
                 planet.planetButton.setBackgroundImage(UIImage(named: "P10orange"), for: .normal)
             }
 
+        }
+        else if player == 4 {
+            planet.planetButton.setBackgroundImage(UIImage(named: "P\(tag+1)"), for: .normal)
         }
 
     }
